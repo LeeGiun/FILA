@@ -1,0 +1,2566 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  position: relative;
+  z-index: -1;
+}
+
+/* pop_up */
+.pop_up {
+  width: 350px;
+  height: 550px;
+  position: absolute;
+  left: 50%;
+  top: 400px;
+  transform: translate(-50%, -30%);
+  z-index: 15;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 5px 5px;
+  border-radius: 10px;
+}
+
+.pop_up input {
+  display: none;
+}
+
+.pop_up label {
+  display: block;
+  width: 10px;
+  height: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+  padding: 5px 20px 15px;
+  cursor: pointer;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.pop_up_outer {
+  width: 300px;
+  height: 500px;
+  margin: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.pop_up_box ul li:nth-child(1) {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 17px;
+  font-weight: bold;
+  color: blue;
+}
+
+.pop_up_box ul li:nth-child(2),
+.pop_up_box ul li:nth-child(4),
+.pop_up_box ul li:nth-child(6),
+.pop_up_box ul li:nth-child(8),
+.pop_up_box ul li:nth-child(10),
+.pop_up_box ul li:nth-child(12),
+.pop_up_box ul li:nth-child(14),
+.pop_up_box ul li:nth-child(16),
+.pop_up_box ul li:nth-child(18) {
+  width: 40%;
+  float: left;
+  text-align: right;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.pop_up_box ul li:nth-child(3),
+.pop_up_box ul li:nth-child(5),
+.pop_up_box ul li:nth-child(7),
+.pop_up_box ul li:nth-child(9),
+.pop_up_box ul li:nth-child(11),
+.pop_up_box ul li:nth-child(13),
+.pop_up_box ul li:nth-child(15),
+.pop_up_box ul li:nth-child(17),
+.pop_up_box ul li:nth-child(19) {
+  width: 56%;
+  padding-bottom: 10px;
+  float: left;
+}
+
+.pop_up_box ul li:nth-child(20) {
+  width: 100%;
+  height: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 19px;
+  float: left;
+  line-height: 8px;
+}
+
+.pop_up_box ul li:nth-child(21) {
+  width: 70%;
+  height: 120px;
+  float: left;
+  margin-left: 45px;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
+}
+
+.pop_up_box ul li:nth-child(17) img {
+  width: 40px;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: block;
+}
+
+.warp {
+  position: relative;
+}
+.warp #QuickMenu {
+  z-index: 9999;
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* width 50px */
+  height: 250px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  box-shadow: 3px 3px 5px #000;
+}
+.warp #QuickMenu .QuickMenu_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.warp #QuickMenu .QuickMenu_box .Q_menu {
+  width: 50px;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.warp #QuickMenu .QuickMenu_box .Q_menu img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct {
+  width: 150px;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickMy_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickDeliveryCheck_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickCart_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickViewProduct_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickMy_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickDeliveryCheck_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickCart_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickViewProduct_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickMy_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickDeliveryCheck_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickCart_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickViewProduct_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickMy_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickDeliveryCheck_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickCart_txt,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickViewProduct_txt {
+  width: 0px;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickMy_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickDeliveryCheck_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickCart_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickViewProduct_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickMy_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickDeliveryCheck_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickCart_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickViewProduct_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickMy_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickDeliveryCheck_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickCart_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickViewProduct_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickMy_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickDeliveryCheck_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickCart_img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickViewProduct_img {
+  width: 50px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickMy_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickMy_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickMy_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickMy_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickViewProduct_img img {
+  width: 47px;
+  height: auto;
+  display: block;
+  margin-left: -11%;
+  margin-top: -5%;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_My .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_DeliveryCheck .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_Cart .QuickViewProduct_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickDeliveryCheck_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickCart_img img,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_ViewProduct .QuickViewProduct_img img {
+  width: 39px;
+  margin: 0;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_UP_Down {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 25px;
+  font-size: 18px;
+  border-bottom: none;
+  padding: 0;
+  text-align: center;
+  color: #777;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 3px;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_UP_Down .QuickUp {
+  width: 100%;
+  height: 50%;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.warp #QuickMenu .QuickMenu_box .QuickMenu_UP_Down .QuickUp a,
+.warp #QuickMenu .QuickMenu_box .QuickMenu_UP_Down .QuickDown a {
+  color: #777;
+  display: block;
+}
+.warp .Q_menu {
+  width: 50px;
+  height: 50px;
+}
+
+/* Header ====================== */
+.page {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.hd_fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #002053;
+  z-index: 99999;
+}
+
+#header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100px;
+}
+#header .header_outer {
+  width: 100%;
+  height: 100px;
+}
+#header .header_box {
+  display: flex;
+  width: 1660px;
+  height: 100px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#header .header_box .logo {
+  width: 150px;
+  height: 100px;
+  line-height: 105px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#header .header_box .sht_header .each_menu_ul,
+#header .header_box .mainMenu .mainMenu_ul {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+#header .header_box .sht_header .each_menu_ul li:nth-child(4),
+#header .header_box .mainMenu .mainMenu_ul li:nth-child(4) {
+  width: 1px;
+  height: 15px;
+  border-right: 1px solid #fff;
+  box-sizing: border-box;
+}
+#header .header_box .sht_header .each_menu_ul li,
+#header .header_box .mainMenu .mainMenu_ul li {
+  height: 100px;
+  line-height: 100px;
+}
+#header .header_box .sht_header .each_menu_ul a,
+#header .header_box .mainMenu .mainMenu_ul a {
+  color: #fff;
+  display: block;
+}
+
+/* GNB ========== */
+#header .gnb .gnb_box .gnb_Menu {
+  width: 220px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#header .gnb .gnb_box .gnb_Menu .gnb_Menu_map picture {
+  padding: 5px;
+  text-align: center;
+}
+
+/* 메인 메뉴 SHEET HEADER 영역*/
+.mainMenu_Sheet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* background 블러처리 */
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.mainMenu_Sheet .main_menu_sht_outer {
+  width: 100%;
+  height: 65vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht {
+  display: flex;
+  z-index: 100;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1660px;
+  height: 65vh;
+  background-color: #fff;
+  background-blend-mode: hue;
+  /* SHEET 메뉴 영역 */
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header {
+  display: flex;
+  width: 1660px;
+  height: 100px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .sht_logo {
+  width: 150px;
+  height: 100px;
+  line-height: 105px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .each_menu_ul {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .each_menu_ul li {
+  height: 25px;
+  line-height: 25px;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .each_menu_ul li:hover {
+  border-bottom: 2px solid #002053;
+  box-sizing: border-box;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .sht_gnb_Menu {
+  width: 220px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainMenu_Sheet .main_menu_sht_outer .main_menu_sht .sht_header .sht_gnb_Menu .sht_gnb_Menu_map picture {
+  padding: 5px;
+  text-align: center;
+}
+
+/* SHEET 영역 내 HEADER li(bar) 영역*/
+.mainMenu_Sheet .main_menu_sht .sht_header .each_menu_ul li a {
+  color: #000 !important;
+}
+.mainMenu_Sheet .main_menu_sht .sht_header .each_menu_ul li:nth-child(4) {
+  position: relative;
+  z-index: -1;
+  display: block !important;
+  width: 1px;
+  height: 15px;
+  border-right: 1px solid #000;
+  box-sizing: border-box;
+}
+
+/* SHEET MENU LIST BOX (맨앞,맨뒤영역)*/
+.sheet_box {
+  width: 1660px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+}
+.sheet_box .sht_firstBox,
+.sheet_box .sht_lastBox {
+  display: flex;
+  width: 13.3333%;
+  height: 500px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  align-content: flex-start;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+.sheet_box .sht_firstBox li:first-child,
+.sheet_box .sht_lastBox li:first-child {
+  width: 100%;
+  height: 50px;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.sheet_box .sht_firstBox li:nth-child(6),
+.sheet_box .sht_lastBox li:nth-child(6) {
+  margin-top: 20px;
+}
+.sheet_box .sht_firstBox li,
+.sheet_box .sht_lastBox li {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+}
+.sheet_box .sht_firstBox li:hover a,
+.sheet_box .sht_lastBox li:hover a {
+  color: #002053;
+  font-weight: bold;
+}
+.sheet_box .sht_firstBox li:first-child:hover a,
+.sheet_box .sht_lastBox li:first-child:hover a {
+  color: #000;
+}
+
+/* SHEET MENU LIST BOX (중간영역)*/
+.sht_box_1,
+.sht_box_2,
+.sht_box_3,
+.sht_box_4 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 13.3333%;
+  height: 500px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+}
+.sht_box_1 li:first-child,
+.sht_box_2 li:first-child,
+.sht_box_3 li:first-child,
+.sht_box_4 li:first-child {
+  height: 50px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.sht_box_1 li,
+.sht_box_2 li,
+.sht_box_3 li,
+.sht_box_4 li {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+}
+.sht_box_1 li:hover a,
+.sht_box_2 li:hover a,
+.sht_box_3 li:hover a,
+.sht_box_4 li:hover a {
+  color: #002053;
+  font-weight: bold;
+}
+.sht_box_1 li:first-child:hover a,
+.sht_box_2 li:first-child:hover a,
+.sht_box_3 li:first-child:hover a,
+.sht_box_4 li:first-child:hover a {
+  color: #000;
+}
+
+/* SHEET MENU LIST BOX (영역사이 bar)*/
+.bar_sht {
+  width: 10%;
+  height: 390px;
+  box-sizing: border-box;
+  margin: 40px 0;
+}
+.bar_sht .bar_1:first-child {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.bar_sht .bar_2:first-child {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.Men_bar_sht_1,
+.Men_bar_sht_2 {
+  height: 335px;
+}
+
+.Kids_bar_sht_1,
+.Kids_bar_sht_1 {
+  height: 415px;
+}
+
+.mainMenu_Sheet {
+  display: none;
+}
+
+/* BRAND BOX */
+.Brand_sheet_box {
+  background-color: #fff;
+  display: flex;
+}
+.Brand_sheet_box .Brand_outer {
+  width: 20%;
+  height: 500px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.Brand_sheet_box .Brand_outer a {
+  display: block;
+}
+.Brand_sheet_box .Brand_outer a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.Brand_sheet_box .Brand_outer a p {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+/* Visual Main Swiper ======================= */
+.swiper_visual {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* 전체 Swiper 영역 CSS 수정 */
+  /* Swiper-Silde 내용 CSS 수정 */
+  /* Progress Bar 색상 및 CSS 수정 */
+  /* Progress Bar Drag 색상 및 CSS 수정 */
+  /* Arrow Next 위치 변경 */
+  /* Arrow Prev 위치 변경 */
+  /* Progress 옆 pagination CSS 수정 */
+}
+.swiper_visual .swiper_visual,
+.swiper_visual swiper-container {
+  position: relative;
+  width: 1660px;
+}
+.swiper_visual .swiper_visual .swiper-wrapper,
+.swiper_visual swiper-container .swiper-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.swiper_visual .swiper-slide,
+.swiper_visual swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 70px;
+  overflow: hidden;
+}
+.swiper_visual .swiper-slide img,
+.swiper_visual swiper-slide img {
+  width: 100%;
+  min-width: 1660px;
+  height: auto;
+  display: block;
+}
+.swiper_visual .swiper-slide .visual_txt,
+.swiper_visual swiper-slide .visual_txt {
+  position: absolute;
+  left: 150px;
+  bottom: 210px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  text-align: left;
+}
+.swiper_visual .swiper-slide .visual_txt h1,
+.swiper_visual swiper-slide .visual_txt h1 {
+  color: #fff;
+  text-shadow: 2.5px 2.5px 5px #000;
+}
+.swiper_visual .swiper-slide a,
+.swiper_visual swiper-slide a {
+  display: block;
+}
+.swiper_visual .swiper-slide a input,
+.swiper_visual swiper-slide a input {
+  display: none;
+}
+.swiper_visual .swiper-slide a label,
+.swiper_visual swiper-slide a label {
+  position: absolute;
+  left: 150px;
+  bottom: 142px;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #ccc;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #000;
+}
+.swiper_visual .swiper-slide a label:hover,
+.swiper_visual swiper-slide a label:hover {
+  background-color: #002053;
+  border: 2px solid #002053;
+  transition: 0.3s;
+}
+.swiper_visual .swiper-horizontal > .swiper-scrollbar,
+.swiper_visual .swiper-scrollbar.swiper-scrollbar-horizontal {
+  z-index: 1;
+  width: 300px;
+  height: 25px;
+  bottom: 87px;
+  left: 150px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 2px 5px;
+}
+.swiper_visual .swiper-scrollbar-drag {
+  border-radius: 5px;
+  background-color: #002053;
+}
+.swiper_visual .swiper-button-prev,
+.swiper_visual .swiper-rtl .swiper-button-next {
+  top: auto;
+  left: 540px;
+  bottom: 75px;
+  color: #fff;
+  z-index: 1;
+}
+.swiper_visual .swiper-button-next,
+.swiper_visual .swiper-rtl .swiper-button-prev {
+  top: auto;
+  left: 585px;
+  bottom: 75px;
+  color: #fff;
+  z-index: 1;
+}
+.swiper_visual .swiper-button-next:after,
+.swiper_visual .swiper-button-prev:after {
+  z-index: 1;
+  font-size: 25px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px #000;
+}
+.swiper_visual .swiper-pagination-fraction {
+  z-index: 1;
+  width: 80px;
+  height: 35px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  left: 455px;
+  bottom: 80px;
+  top: auto;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 3px 3px 5px #000;
+}
+
+/* Ranking Swiper ======================= */
+.Ranking {
+  overflow: hidden;
+}
+.Ranking .Ranking_box {
+  position: relative;
+  width: 1660px;
+  height: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.Ranking .Ranking_box .Ranking_title {
+  z-index: 10;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+.Ranking .Ranking_box .Ranking_title h1 {
+  width: 1660px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 32px;
+}
+.Ranking .Ranking_box .Ranking_title .Ranking_Tap {
+  width: 900px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px #777;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.Ranking .Ranking_box .Ranking_title .Ranking_Tap li {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+.Ranking .Ranking_box .Ranking_title .Ranking_Tap li:hover {
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.Ranking .Ranking_box .swiper_Ranking2 {
+  display: none;
+}
+.Ranking .Ranking_box .swiper_Ranking3 {
+  display: none;
+}
+.Ranking .Ranking_box .swiper_Ranking4 {
+  display: none;
+}
+.Ranking .Ranking_box .swiper_Ranking1,
+.Ranking .Ranking_box .swiper_Ranking2,
+.Ranking .Ranking_box .swiper_Ranking3,
+.Ranking .Ranking_box .swiper_Ranking4 {
+  margin-top: 20vh;
+  box-sizing: border-box;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-wrapper,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-wrapper,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-wrapper,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-wrapper {
+  width: 100%;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-slide,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-slide,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-slide,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-slide {
+  position: relative;
+  width: 100%;
+  margin-top: 5vh;
+  margin-top: 50px;
+  height: 68vh;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-slide img,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-slide img,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-slide img,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-slide img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-slide div,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-slide div,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-slide div,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-slide div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-slide-active,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-slide-active,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-slide-active,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-slide-active {
+  z-index: 5;
+  box-shadow: 0 0 10px #002053;
+  scale: 1.1;
+  transition: 0.3s;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-slide-active div,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-slide-active div,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-slide-active div,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-slide-active div {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  transition: 0s;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination {
+  z-index: 5;
+  width: 396px;
+  height: 481px;
+  bottom: 150px;
+  left: 30px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.01);
+  cursor: pointer;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet1,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet2,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet3,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet4,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet1,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet2,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet3,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet4,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet1,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet2,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet3,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet4,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet1,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet2,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet3,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet4 {
+  border-radius: 0px;
+  width: 350px;
+  height: 70px;
+  margin-bottom: 10px;
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 7px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 10px #777;
+  background-color: #fff;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet1 span,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet2 span,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet3 span,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .custom_bullet4 span,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet1 span,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet2 span,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet3 span,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .custom_bullet4 span,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet1 span,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet2 span,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet3 span,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .custom_bullet4 span,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet1 span,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet2 span,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet3 span,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .custom_bullet4 span {
+  width: 100%;
+  line-height: 70px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .swiper-pagination-custom-bullet1,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .swiper-pagination-custom-bullet2,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .swiper-pagination-custom-bullet3,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-pagination .swiper-pagination-custom-bullet4,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .swiper-pagination-custom-bullet1,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .swiper-pagination-custom-bullet2,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .swiper-pagination-custom-bullet3,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-pagination .swiper-pagination-custom-bullet4,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .swiper-pagination-custom-bullet1,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .swiper-pagination-custom-bullet2,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .swiper-pagination-custom-bullet3,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-pagination .swiper-pagination-custom-bullet4,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .swiper-pagination-custom-bullet1,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .swiper-pagination-custom-bullet2,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .swiper-pagination-custom-bullet3,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-pagination .swiper-pagination-custom-bullet4 {
+  font-weight: bold;
+  background-color: #002053;
+  border: 1px solid #002053;
+  box-sizing: border-box;
+  color: #fff;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-button-next,
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-button-next,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-button-next,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-button-next,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-button-prev {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: 535px;
+  bottom: 400px;
+  color: #777;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px #777;
+}
+.Ranking .Ranking_box .swiper_Ranking1 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking2 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking3 .swiper-button-prev,
+.Ranking .Ranking_box .swiper_Ranking4 .swiper-button-prev {
+  left: 535px;
+  color: #777;
+  font-weight: bold;
+}
+
+.slide_sub_img {
+  position: relative;
+  z-index: -5 !important;
+  background-image: url(/sus_ban01.711a32f0.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10vh 0;
+  height: 80vh;
+}
+.slide_sub_img .slide_sub_img_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
+.slide_sub_img .slide_sub_img_box img {
+  position: relative;
+  z-index: -5;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.slide_sub_img .slide_sub_txt {
+  position: fixed;
+  left: 50px;
+  top: 150px;
+  writing-mode: vertical-rl;
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.new_arrival {
+  position: relative;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.new_arrival .new_arrival_box {
+  width: 1660px;
+  margin: 0 auto;
+}
+.new_arrival .new_arrival_box .NewSlideTap {
+  width: 1660px;
+  height: 20vh;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.new_arrival .new_arrival_box .NewSlideTap h1 {
+  height: 15vh;
+  line-height: 15vh;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1660px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px #000;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li {
+  margin: 0px 40px;
+  height: 40px;
+  line-height: 40px;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li a {
+  color: #777;
+  display: block;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li a div {
+  width: 0%;
+  margin: 0 auto;
+  border-bottom: 3px solid #000;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li:nth-child(4) {
+  margin-right: 60px;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li:hover a {
+  font-weight: bold;
+  color: #002053;
+}
+.new_arrival .new_arrival_box .NewSlideTap ul li:hover a div {
+  width: 100%;
+  border-bottom: 3px solid #002053;
+  transition: 0.3s;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper2 {
+  display: none;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper3 {
+  display: none;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper4 {
+  display: none;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide1 {
+  background-image: url(/1.cd784041.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide2 {
+  background-image: url(/2.8a02b389.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide3 {
+  background-image: url(/3.460383e5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide4 {
+  background-image: url(/4.c0c14b21.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide5 {
+  background-image: url(/5.276077cb.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .slide6 {
+  background-image: url(/6.ea32c75b.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1,
+.new_arrival .new_arrival_box .NewArrival_Swiper2,
+.new_arrival .new_arrival_box .NewArrival_Swiper3,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 {
+  width: 100%;
+  height: 67vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide {
+  position: relative;
+  height: 50vh;
+  margin-top: 10vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 3px 3px 5px #002053;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide img,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide img,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide img,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide img:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide img:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide img:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide img:hover {
+  scale: 1.1;
+  transition: 0.3s;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide {
+  font-size: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -170px;
+  left: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  text-align: left;
+  padding: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  background-color: skyblue;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:first-child,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:first-child,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:first-child,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:first-child {
+  color: #777;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(2) {
+  font-size: 17px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(1),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(1),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(1),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(1) {
+  color: #002053;
+  font-weight: bold;
+  font-size: 16px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(2),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(2) {
+  color: #aaa;
+  margin-left: 15px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(3),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(3),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(3),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(3) span:nth-child(3) {
+  color: red;
+  margin-left: 15px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(4),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(4),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(4),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(4) {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #444;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(5),
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(5),
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(5),
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .newTxtBoxAll ul li:nth-child(5) {
+  font-size: 12px;
+  color: #444;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 170px;
+  height: 160px;
+  padding: 40px 10px 10px;
+  box-sizing: border-box;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn1,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn1,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn1,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn1 {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-left: 20px;
+  margin-right: 30px;
+  padding-top: 3px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn2,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn2,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn2,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn2 {
+  width: 35px;
+  height: 35px;
+  float: left;
+  padding-bottom: 3px;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 input,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 input,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 input,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 input {
+  display: none;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  border: 2px solid #002053;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 3px #000;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label:hover,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide .newTxtOuter .new_btn_box .new_btn3 label:hover {
+  background-color: #002053;
+  border: 2px solid #002053;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide:hover ~ .new_txt_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide:hover ~ .new_txt_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide:hover ~ .new_txt_box,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide:hover ~ .new_txt_box {
+  bottom: 0;
+}
+.new_arrival .new_arrival_box .NewArrival_Swiper1 .swiper-wrapper .swiper-slide-active,
+.new_arrival .new_arrival_box .NewArrival_Swiper2 .swiper-wrapper .swiper-slide-active,
+.new_arrival .new_arrival_box .NewArrival_Swiper3 .swiper-wrapper .swiper-slide-active,
+.new_arrival .new_arrival_box .NewArrival_Swiper4 .swiper-wrapper .swiper-slide-active {
+  scale: 1.1;
+  z-index: 6;
+  background-color: burlywood;
+}
+
+.NewArrival_Swiper2 .slide1 {
+  background-image: url(/1.84746866.jpeg);
+}
+.NewArrival_Swiper2 .slide2 {
+  background-image: url(/2.2a152cbf.jpeg);
+}
+.NewArrival_Swiper2 .slide3 {
+  background-image: url(/3.b461a32b.jpeg);
+}
+.NewArrival_Swiper2 .slide4 {
+  background-image: url(/4.7b716283.jpeg);
+}
+.NewArrival_Swiper2 .slide5 {
+  background-image: url(/5.3b1fd1d8.jpeg);
+}
+.NewArrival_Swiper2 .slide6 {
+  background-image: url(/6.af329658.jpeg);
+}
+
+.NewArrival_Swiper3 .slide1 {
+  background-image: url(/1.57a6f8b7.jpeg);
+}
+.NewArrival_Swiper3 .slide2 {
+  background-image: url(/2.62c37e07.jpeg);
+}
+.NewArrival_Swiper3 .slide3 {
+  background-image: url(/3.ece21e76.jpeg);
+}
+.NewArrival_Swiper3 .slide4 {
+  background-image: url(/4.55341c03.jpeg);
+}
+.NewArrival_Swiper3 .slide5 {
+  background-image: url(/5.3e6f8008.jpeg);
+}
+.NewArrival_Swiper3 .slide6 {
+  background-image: url(/6.48053ec0.jpeg);
+}
+
+.NewArrival_Swiper4 .slide1 {
+  background-image: url(/1.19464407.jpeg);
+}
+.NewArrival_Swiper4 .slide2 {
+  background-image: url(/2.dd1a0571.jpeg);
+}
+.NewArrival_Swiper4 .slide3 {
+  background-image: url(/3.f7deedbf.jpeg);
+}
+.NewArrival_Swiper4 .slide4 {
+  background-image: url(/4.9f2e77ea.jpeg);
+}
+.NewArrival_Swiper4 .slide5 {
+  background-image: url(/5.ec3f811d.jpeg);
+}
+.NewArrival_Swiper4 .slide6 {
+  background-image: url(/6.e82ee34c.jpeg);
+}
+
+.magaZine {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+}
+.magaZine h1 {
+  font-size: 32px;
+  width: 500px;
+  height: 15vh;
+  margin: 0 auto;
+  line-height: 22vh;
+}
+.magaZine .magaZine_box {
+  width: 1660px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.magaZine .magaZine_box .Magazine_Swiper {
+  height: 100vh;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide {
+  position: relative;
+  width: 600px;
+  height: 740px;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  opacity: 0;
+  transition: 0.3s;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1 .Magazine_txt,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2 .Magazine_txt,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3 .Magazine_txt,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4 .Magazine_txt,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 .Magazine_txt {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 0;
+  color: #fff;
+  background-color: #002053;
+  opacity: 0;
+  transition: 0.4s;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1 .Magazine_txt h2,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2 .Magazine_txt h2,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3 .Magazine_txt h2,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4 .Magazine_txt h2,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 .Magazine_txt h2 {
+  width: 500px;
+  font-size: 32px;
+  text-shadow: 1px 2px 5px #000;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1 input,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2 input,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3 input,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4 input,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 input {
+  display: none;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1 label,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2 label,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3 label,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4 label,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 label {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 30px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  box-shadow: 1px 1px 3px #000;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.4s;
+}
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur1 label:hover,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur2 label:hover,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur3 label:hover,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur4 label:hover,
+.magaZine .magaZine_box .Magazine_Swiper .swiper-wrapper .swiper-slide .Magazine_blur5 label:hover {
+  border: 2px solid #002053;
+  background-color: #002053;
+  transition: 0.3s;
+}
+
+.recommend {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+}
+.recommend h1 {
+  font-size: 32px;
+  width: 500px;
+  height: 15vh;
+  margin: 0 auto;
+  line-height: 22vh;
+}
+.recommend .recommend_box {
+  width: 1660px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.recommend .recommend_box .Recommend_Swiper {
+  height: 100vh;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide {
+  position: relative;
+  height: 710px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: skyblue;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus1,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus2,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus3,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus4,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus5,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus6,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus7,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus8,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus9,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus10,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus11,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus12,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus13,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus14,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus15,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus16,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus17,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus18,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus19,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus20,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus21,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus22,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus23,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus24,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus25 {
+  position: absolute;
+  top: 220px;
+  left: 300px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus1 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus2 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus3 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus4 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus5 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus6 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus7 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus8 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus9 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus10 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus11 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus12 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus13 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus14 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus15 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus16 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus17 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus18 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus19 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus20 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus21 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus22 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus23 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus24 a,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus25 a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  text-shadow: 1px 1px 5px #000;
+  color: #fff;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus2 {
+  top: 230px;
+  left: 370px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus3 {
+  top: auto;
+  bottom: 255px;
+  left: 340px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus4 {
+  left: auto;
+  top: auto;
+  right: 125px;
+  bottom: 290px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus5 {
+  top: auto;
+  left: 160px;
+  bottom: 150px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus6 {
+  top: auto;
+  left: auto;
+  right: 100px;
+  bottom: 160px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus7 {
+  top: 23px;
+  left: 260px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus8 {
+  top: 150px;
+  left: auto;
+  right: 270px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus9 {
+  left: auto;
+  right: 200px;
+  top: 320px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus10 {
+  top: auto;
+  left: auto;
+  right: 320px;
+  bottom: 220px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus11 {
+  top: auto;
+  bottom: 140px;
+  left: auto;
+  right: 250px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus12 {
+  top: auto;
+  bottom: 40px;
+  left: auto;
+  right: 280px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus13 {
+  top: 250px;
+  left: auto;
+  right: 260px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus14 {
+  left: auto;
+  right: 250px;
+  top: 400px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus15 {
+  top: auto;
+  bottom: 300px;
+  left: 180px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus16 {
+  top: auto;
+  left: auto;
+  bottom: 90px;
+  right: 270px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus17 {
+  top: auto;
+  left: auto;
+  bottom: 30px;
+  right: 230px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus18 {
+  top: 220px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus19 {
+  top: auto;
+  left: auto;
+  bottom: 90px;
+  right: 180px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus20 {
+  top: 70px;
+  left: 230px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus21 {
+  top: 140px;
+  left: 155px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus22 {
+  top: 230px;
+  left: 215px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus23 {
+  top: auto;
+  left: auto;
+  bottom: 340px;
+  right: 240px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus24 {
+  top: auto;
+  left: auto;
+  bottom: 160px;
+  right: 185px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_plus25 {
+  top: auto;
+  bottom: 70px;
+  left: 210px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 {
+  display: none;
+  position: absolute;
+  top: 220px;
+  left: 168px;
+  width: 130px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  font-size: 16px;
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 3px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(1) {
+  height: 45px;
+  font-size: 14px;
+  color: #002053;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(2) select,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(2) select {
+  margin-top: 10px;
+  width: 110px;
+  height: 25px;
+  outline: none;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  color: #002053;
+  font-weight: bold;
+  cursor: pointer;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(3),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(4) {
+  position: absolute;
+  left: 25px;
+  bottom: 65px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  float: left;
+  cursor: pointer;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(3) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(4) img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(4),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(4) {
+  bottom: 69px;
+  left: auto;
+  right: 25px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(4) img,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(4) img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(5) input,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(5) input {
+  display: none;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(5) label,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(5) label {
+  margin-top: 55px;
+  display: inline-block;
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+  font-size: 14px;
+  font-weight: normal;
+  border: 2px solid #fff;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt1 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt18 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 li:nth-child(5) label:hover,
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 li:nth-child(5) label:hover {
+  background-color: #002053;
+  border: 2px solid #002053;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt2 {
+  left: auto;
+  top: 200px;
+  right: 9px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt3 {
+  top: auto;
+  left: 372px;
+  bottom: 90px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt4 {
+  left: auto;
+  right: 158px;
+  top: 240px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt5 {
+  top: auto;
+  left: 25px;
+  bottom: 10px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt6 {
+  top: auto;
+  bottom: 10px;
+  left: auto;
+  right: 134px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt7 {
+  top: 15px;
+  left: auto;
+  right: 118px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt8 {
+  top: 80px;
+  left: auto;
+  right: 305px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt9 {
+  left: auto;
+  right: 68px;
+  top: auto;
+  bottom: 250px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt10 {
+  top: auto;
+  bottom: 190px;
+  left: auto;
+  right: 353px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt11 {
+  top: auto;
+  left: auto;
+  bottom: 30px;
+  right: 117px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 {
+  top: auto;
+  left: auto;
+  bottom: 10px;
+  right: 313px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 {
+  top: 130px;
+  left: auto;
+  right: 128px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt14 {
+  top: 330px;
+  left: auto;
+  right: 118px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt15 {
+  top: 300px;
+  left: 47px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt16 {
+  top: auto;
+  bottom: 10px;
+  left: 107px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 {
+  top: auto;
+  left: auto;
+  bottom: 15px;
+  right: 98px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 {
+  top: auto;
+  left: auto;
+  bottom: 60px;
+  right: 47px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt19 li:nth-child(1) {
+  padding: 13px 0;
+  box-sizing: border-box;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt20 {
+  top: 10px;
+  left: 260px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 {
+  top: 10px;
+  left: 20px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt21 li:nth-child(1) {
+  padding: 13px 0;
+  box-sizing: border-box;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt22 {
+  left: 80px;
+  top: 220px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt23 {
+  left: auto;
+  right: 105px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt24 {
+  top: auto;
+  left: auto;
+  bottom: 30px;
+  right: 50px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt25 {
+  top: auto;
+  left: 75px;
+  bottom: 30px;
+}
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt12 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt13 li:nth-child(1),
+.recommend .recommend_box .Recommend_Swiper .swiper-wrapper .swiper-slide .recommend_txt17 li:nth-child(1) {
+  font-size: 12px;
+}
+
+.btn_section {
+  position: relative;
+  z-index: -2 !important;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  /* SNS_box =========== */
+  /* footer ============ */
+}
+.btn_section .SNS_box {
+  height: 60vh;
+  overflow: hidden;
+}
+.btn_section .SNS_box .SNS_title {
+  width: 1660px;
+  margin: 0 auto;
+  font-size: 32px;
+}
+.btn_section .SNS_box .SNS_title span:first-child {
+  width: 50%;
+  height: 15vh;
+  float: left;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+.btn_section .SNS_box .SNS_title span:last-child {
+  width: 50%;
+  height: 15vh;
+  float: right;
+  margin-bottom: 25px;
+  text-align: right;
+  padding-right: 25px;
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+.btn_section .SNS_box .SnsSwiper {
+  width: 1660px;
+  height: 40vh;
+  margin: 0 auto;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper {
+  width: 100%;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 40vh !important;
+  overflow: hidden;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SNS_contentBox {
+  display: flex;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SnsCotn {
+  width: 400px;
+  height: 400px;
+  margin-right: 20px;
+  background-color: red;
+  overflow: hidden;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SnsCotn img {
+  width: 100%;
+  height: auto;
+  display: inline;
+  vertical-align: middle;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SNS_content7 {
+  position: relative;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SNS_content7 img {
+  width: 106%;
+  margin-top: -43%;
+  margin-left: -5%;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-wrapper .swiper-slide .SnsCotn:last-child {
+  margin-right: 0;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-pagination-vertical.swiper-pagination-bullets, .btn_section .SNS_box .SnsSwiper .swiper-vertical > .swiper-pagination-bullets {
+  width: 50px;
+  height: 250px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.btn_section .SNS_box .SnsSwiper .swiper-pagination-bullet {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 0px;
+}
+.btn_section .SNS_box .SnsSwiper .swiper-pagination-bullet-active {
+  background-color: #002053;
+}
+.btn_section .SNS_box .SnsSwiper .SNS_custom_bullet {
+  height: 50%;
+  font-size: 38px;
+  padding: 30px 0;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+}
+.btn_section #footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40vh;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: #eee;
+  color: #777;
+}
+.btn_section #footer .footer_box {
+  z-index: 4;
+  width: 1660px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 8vh;
+}
+.btn_section #footer .footer_box .foot_top {
+  width: 100%;
+  height: 8vh;
+}
+.btn_section #footer .footer_box .foot_top .ft_log {
+  width: 80px;
+  padding: 7px 0;
+  margin-top: 15px;
+  box-sizing: border-box;
+  float: left;
+}
+.btn_section #footer .footer_box .foot_top .ft_log img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.btn_section #footer .footer_box .foot_top .ft_SNS {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-top: 25px;
+  font-size: 20px;
+  float: right;
+}
+.btn_section #footer .foot_mid {
+  width: 65%;
+  background-color: #eee;
+}
+.btn_section #footer .foot_mid .ft_menu {
+  height: 22vh;
+  font-weight: normal;
+}
+.btn_section #footer .foot_mid .ft_menu ul {
+  width: 24%;
+  float: left;
+}
+.btn_section #footer .foot_mid .ft_menu ul li {
+  padding: 4px 0;
+  text-align: center;
+  font-size: 12px;
+}
+.btn_section #footer .foot_mid .ft_menu ul li a {
+  color: #777;
+  display: block;
+}
+.btn_section #footer .foot_mid .ft_menu ul li:hover a {
+  color: #002053;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn_section #footer .foot_mid .ft_menu ul li:first-child {
+  padding-bottom: 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn_section #footer .foot_mid .ft_menu ul li:first-child a {
+  color: #444;
+}
+.btn_section #footer .foot_mid .ft_menu ul:nth-child(1) {
+  margin-left: 2%;
+}
+.btn_section #footer .foot_mid .ft_menu ul:nth-child(4) {
+  width: 24%;
+}
+.btn_section #footer .foot_mid .ft_info1 {
+  height: 7vh;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox1,
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 25px;
+  margin-bottom: 5px;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox1 span,
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 span {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox1 span a,
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 span a {
+  color: #444;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 span:nth-child(2) a {
+  color: red;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 span:nth-child(4) a {
+  color: blue;
+}
+.btn_section #footer .foot_mid .ft_info1 .info_spanBox2 select {
+  width: 150px;
+  height: 35px;
+  outline: none;
+  border: none;
+  background-color: none;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #eee;
+  text-align: center;
+  color: #444;
+}
+.btn_section #footer .foot_btm {
+  width: 35%;
+  height: 22vh;
+  margin: 0;
+  padding: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.btn_section #footer .foot_btm .ft_info2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 15vh;
+}
+.btn_section #footer .foot_btm .ft_info2 span {
+  display: inline-block;
+  height: 0px;
+  text-align: left;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+}
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(1) {
+  padding: 0;
+  text-align: left;
+}
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(4) a,
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(8) a {
+  font-weight: bold;
+  color: #002053;
+}
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(7) {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: -0.4px;
+}
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(7) a {
+  color: #002053;
+}
+.btn_section #footer .foot_btm .ft_info2 span:nth-child(9) {
+  font-weight: bold;
+  color: red;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER {
+  width: 100%;
+  height: 10vh;
+  margin-top: 4vh;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER .CS_btn {
+  height: 10vh;
+  float: left;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER .CS_btn input {
+  display: none;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER .CS_btn label {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 30px;
+  border: 2px solid #002053;
+  background-color: #fff;
+  margin-top: 15px;
+  box-shadow: 1.5px 1.5px 3px #000;
+  color: #000;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER .CS_btn label:hover {
+  background-color: #002053;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER h1 {
+  height: 70px;
+  line-height: 70px;
+  float: left;
+  color: #000;
+  text-align: right;
+  margin: 0 25px;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER h1:nth-child(2) {
+  width: 150px;
+  height: 50px;
+  float: right;
+  margin-right: 0px;
+  text-align: center;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER h1:nth-child(3) {
+  margin-right: 0;
+}
+.btn_section #footer .foot_btm .ft_CS_CENTER p {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  float: right;
+}
+
+/*# sourceMappingURL=/main.8887fe77.css.map */

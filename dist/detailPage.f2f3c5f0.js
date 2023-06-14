@@ -168,11 +168,11 @@ function reloadCSS() {
   }, 50);
 }
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"Login_Page/CSS/2_login.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"CSS/detailPage.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./back_img\\naver_13x12.png":[["naver_13x12.38610ceb.png","Login_Page/CSS/back_img/naver_13x12.png"],"Login_Page/CSS/back_img/naver_13x12.png"],"./back_img\\kakao_13x12.png":[["kakao_13x12.6e5d21be.png","Login_Page/CSS/back_img/kakao_13x12.png"],"Login_Page/CSS/back_img/kakao_13x12.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./BACK_IMG\\detail1.jpeg":[["detail1.2d828341.jpeg","CSS/BACK_IMG/detail1.jpeg"],"CSS/BACK_IMG/detail1.jpeg"],"./BACK_IMG\\detail1_Thumb.jpeg":[["detail1_Thumb.0266fabe.jpeg","CSS/BACK_IMG/detail1_Thumb.jpeg"],"CSS/BACK_IMG/detail1_Thumb.jpeg"],"./BACK_IMG\\detail2_Thumb.jpeg":[["detail2_Thumb.0da24a31.jpeg","CSS/BACK_IMG/detail2_Thumb.jpeg"],"CSS/BACK_IMG/detail2_Thumb.jpeg"],"./BACK_IMG\\detail3_Thumb.jpeg":[["detail3_Thumb.d6d41cb8.jpeg","CSS/BACK_IMG/detail3_Thumb.jpeg"],"CSS/BACK_IMG/detail3_Thumb.jpeg"],"./BACK_IMG\\detail4_Thumb.jpeg":[["detail4_Thumb.e1166b2b.jpeg","CSS/BACK_IMG/detail4_Thumb.jpeg"],"CSS/BACK_IMG/detail4_Thumb.jpeg"],"./BACK_IMG\\detail5_Thumb.jpeg":[["detail5_Thumb.0e1f3735.jpeg","CSS/BACK_IMG/detail5_Thumb.jpeg"],"CSS/BACK_IMG/detail5_Thumb.jpeg"],"./BACK_IMG\\detail6_Thumb.jpeg":[["detail6_Thumb.2c602049.jpeg","CSS/BACK_IMG/detail6_Thumb.jpeg"],"CSS/BACK_IMG/detail6_Thumb.jpeg"],"./BACK_IMG\\detail7_Thumb.jpeg":[["detail7_Thumb.e89f3045.jpeg","CSS/BACK_IMG/detail7_Thumb.jpeg"],"CSS/BACK_IMG/detail7_Thumb.jpeg"],"./BACK_IMG\\detail_Event.jpg":[["detail_Event.d2b8e110.jpg","CSS/BACK_IMG/detail_Event.jpg"],"CSS/BACK_IMG/detail_Event.jpg"],"./BACK_IMG\\Detail_FineGreen.png":[["Detail_FineGreen.e68270a5.png","CSS/BACK_IMG/Detail_FineGreen.png"],"CSS/BACK_IMG/Detail_FineGreen.png"],"./BACK_IMG\\Detail_Red.png":[["Detail_Red.1b4da1f0.png","CSS/BACK_IMG/Detail_Red.png"],"CSS/BACK_IMG/Detail_Red.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -342,4 +342,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/2_login.ae698a48.js.map
+//# sourceMappingURL=/detailPage.f2f3c5f0.js.map
