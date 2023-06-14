@@ -1,0 +1,282 @@
+* {padding: 0; margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;}
+li {list-style: none;}
+a {text-decoration: none;
+color: #000;
+display: block;}
+/* ===================== */
+
+.warp {
+  position: relative;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+
+
+
+/* logo */
+.header .logo {
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  top: 30px;
+  width: 100px;
+  padding: 0 25px;
+}
+.header .logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* gnb */
+.gnb {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+.gnb_box {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 100px;
+}
+.gnb_box li {
+  width: 25px;
+  height: 25px;
+  
+}
+
+
+
+/* lnb */
+.lnb {
+  width: 100%;
+  height: 100px;
+}
+.lnb_box {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.lnb_box li {
+  height: 100px;
+  line-height: 100px;
+  margin-right: 20px;
+}
+.lnb_box li a {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+.lnb_box .bar {
+  width: 2px;
+  height: 12px;
+  border-right: 1px solid #000;
+  margin-top: 44px;
+}
+
+
+
+
+
+/* ========================== */
+
+
+/* 타이틀 */
+.IdPw_main {
+  width: 100%;
+}
+.IdPw_main_box {
+  width: 1440px;
+  margin: 0 auto;
+}
+.IdPw_main_box h1 {
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  box-sizing: border-box;
+}
+
+
+/* 카카오 간편 */
+.kakao_box {
+  width: 600px;
+  height: 110px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.kakao_box h4 {
+  font-weight: normal;
+}
+.kakao_box input {
+  display: none;
+}
+.kakao_box label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: rgb(255, 220, 0);
+  background-image: url(./back_img/kakao_13x12.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 23px;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+/* 이름, 휴대폰번호 입력 */
+.IdPw_box1 {
+  width: 600px;
+  height: 130px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.IdPw_box1 input{
+  display: flex;
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+#IdPw_pw {
+  width: 335px;
+  float: right;
+}
+.IdPw_box1 #IdPw_Tel1,
+.IdPw_box1 #IdPw_Tel2 {
+  width: 120px;
+  height: 50px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #888;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.IdPw_box1 #IdPw_Tel3 {
+  width: 335px;
+  float: right;
+}
+
+
+
+
+/* 인증번호 요청 버튼 */
+/* 인증번호 확인 입력창 */
+.IdPw_btn,
+.IdPw_btnChk {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+}
+.IdPw_btnChk {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+.IdPw_btn input {display: none;}
+.IdPw_btn label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #002965;
+  border: 1px solid #002965;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+/* 인증번호 확인버튼 */
+#IdPw_btnChk1{ /* input */
+  width: 420px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+#IdPw_btnChk2 {display: none;} /* input */
+.IdPw_btnChk label {
+  display: block;
+  width: 160px;
+  height: 50px;
+  outline: none;
+  float: right;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  background-color: #002965;
+  cursor: pointer;
+}
+.IdPw_btnChk {
+  display: none;
+}
+
+
+
+/* 중간선 */
+.IdPw_bttn_bar {
+  width: 600px;
+  height: 2px;
+  margin: 50px auto; 
+  border-bottom: 1px solid #ccc;
+}
+.IdPw_bttn_bar.black {
+  border-bottom: 1px solid #000;
+}
+
+
+
+
+@media all and (max-width:1530px) {
+  .header {
+    width: 1530px;
+  }
+}

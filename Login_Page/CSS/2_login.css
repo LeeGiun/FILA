@@ -1,0 +1,273 @@
+* {padding: 0; margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;}
+li {list-style: none;}
+a {text-decoration: none;
+color: #000;
+display: block;}
+/* ===================== */
+
+.warp {
+  position: relative;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+
+
+
+/* logo */
+.header .logo {
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  top: 30px;
+  width: 100px;
+  padding: 0 25px;
+}
+.header .logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* gnb */
+.gnb {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+.gnb_box {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 100px;
+}
+.gnb_box li {
+  width: 25px;
+  height: 25px;
+  
+}
+
+
+
+/* lnb */
+.lnb {
+  width: 100%;
+  height: 100px;
+}
+.lnb_box {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.lnb_box li {
+  height: 100px;
+  line-height: 100px;
+  margin-right: 20px;
+}
+.lnb_box li a {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+.lnb_box .bar {
+  width: 2px;
+  height: 12px;
+  border-right: 1px solid #000;
+  margin-top: 44px;
+}
+
+
+
+
+
+/* ========================== */
+
+
+/* 타이틀 */
+.login_main {
+  width: 100%;
+}
+.login_main_box {
+  width: 1440px;
+  margin: 0 auto;
+}
+.login_main_box h1 {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  box-sizing: border-box;
+}
+
+
+
+/* 아이디입력, 비밀번호 입력 */
+.login_box1 {
+  width: 600px;
+  height: 130px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.login_box1 input{
+  display: flex;
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+
+/* 아이디저장 , 아이디/비밀번호 찾기 */
+.id_remember {
+  width: 600px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.id_pw_search {
+  border-bottom: 1px solid #888;
+  float: right;
+}
+.id_pw_search a {
+  color: #888;
+}
+
+
+/* 로그인버튼 */
+.login_btn {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+
+}
+.login_btn input {display: none;}
+.login_btn label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #002965;
+  border: 1px solid #002965;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+/* SNS 로그인 */
+.login_sns_btn {
+  width: 600px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.login_sns input {
+  display: none;
+}
+
+.login_sns label{
+  display: block;
+  width: 290px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+.login_sns label a {
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+}
+.login_sns1_btn label {
+  background-image: url(./back_img/naver_13x12.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 23px;
+}
+.login_sns2_btn label {
+  background-image: url(./back_img/kakao_13x12.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 23px;
+}
+
+
+/* 중간선 */
+.login_bttn_bar {
+  width: 600px;
+  height: 2px;
+  margin: 50px auto;  
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+/* 회원가입 BTN */
+.join_btn {
+  width: 600px;
+  height: 60px;
+  margin: 0 auto;
+}
+.join_btn input {display: none;}
+.join_btn label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #002965;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 30px;
+}
+.join_btn label a {
+  color: #002965;
+}
+
+/* 비회원 주문조회 */
+.nonmembership {
+  width: 122px;
+  height: 30px;
+  line-height: 35px;
+  margin: 20px auto;
+  text-align: center;
+  border-bottom: 1px solid #888;
+}
+.nonmembership a{
+  color: #888;
+}
+
+@media all and (max-width:1530px) {
+  .header {
+    width: 1530px;
+  }
+}

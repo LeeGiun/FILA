@@ -1,0 +1,650 @@
+* {padding: 0; margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;}
+li {list-style: none;}
+a {text-decoration: none;
+color: #000;
+display: block;}
+/* ===================== */
+
+.warp {
+  position: relative;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+
+
+
+/* logo */
+.header .logo {
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  top: 30px;
+  width: 100px;
+  padding: 0 25px;
+}
+.header .logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* gnb */
+.gnb {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+.gnb_box {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 100px;
+}
+.gnb_box li {
+  width: 25px;
+  height: 25px;
+  
+}
+
+
+
+/* lnb */
+.lnb {
+  width: 100%;
+  height: 100px;
+}
+.lnb_box {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.lnb_box li {
+  height: 100px;
+  line-height: 100px;
+  margin-right: 20px;
+}
+.lnb_box li a {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+.lnb_box .bar {
+  width: 2px;
+  height: 12px;
+  border-right: 1px solid #000;
+  margin-top: 44px;
+}
+
+
+
+/* 타이틀 */
+.join_main {
+  width: 100%;
+}
+.join_main_box {
+  width: 1440px;
+  margin: 0 auto;
+}
+.join_main_box h1 {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+
+
+/* 중간선 */
+.join_bttn_bar {
+  width: 600px;
+  height: 2px;
+  margin: 50px auto;  
+  border-bottom: 1px solid #ccc;
+}
+.join_bttn_bar.black {
+  border-bottom: 1px solid #000;
+}
+.join_bar_outer {
+  width: 100%;
+  float: left;
+  margin-top: 110px;
+  margin-bottom: 10px;
+}
+.middle_bar {
+  margin-top: 0px;
+}
+
+
+
+
+/* 중간 타이틀 */
+.join_title {
+  width: 600px;
+  height: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.join_title h3{
+  width: 300px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  float: left;
+}
+.join_title span {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  float: right;
+}
+.title_terms {
+  margin-bottom: 30px;
+}
+.doubleTit1{
+  position: relative;
+}
+.doubleTit2 h3,
+.doubleTit1 h3 {
+  width: 150px;
+}
+.doubleTit1 span {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.doubleTit1 label,
+.doubleTit1 input,
+.doubleTit2 label,
+.doubleTit2 input {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.doubleTit1 label,
+.doubleTit2 label {
+  color: #888;
+  font-weight: blod;
+}
+.doubleTit1 label:hover,
+.doubleTit2 label:hover {
+  color: #000;
+}
+
+
+
+/* 카카오 간편 */
+.kakao_box {
+  width: 600px;
+  height: 110px;
+  margin: 0 auto;
+}
+.kakao_box h4 {
+  font-weight: normal;
+}
+.kakao_box input {
+  display: none;
+}
+.kakao_box label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: rgb(255, 220, 0);
+  background-image: url(./back_img/kakao_13x12.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 23px;
+  margin-top: 30px;
+}
+
+
+
+
+/* 본인인증 정보입력란 */
+/* 필수정보 입력란 */
+.join_box1,
+.join_box2,
+.join_box3,
+.join_box4 {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+}
+.join_box1 {
+  margin-top: 10px;
+}
+.join_box1 input,
+.join_box2 input,
+.join_box3 input,
+.join_box4 input {
+  display: flex;
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.join_box2 {
+  height: 240px;
+}
+.join_box3,
+.join_box4 {
+  height: 365px;
+  margin-top: 10px;
+}
+.join_box4 {
+  height: 300px;
+}
+
+
+.join_box2 input {
+  margin-bottom: 25px;
+}
+#join_PostCode {
+  width: 480px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.join_box1 #join_Tel1,
+.join_box1 #join_Tel2 {
+  width: 120px;
+  height: 50px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #888;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.join_box1 #join_Tel3 {
+  width: 335px;
+  float: right;
+}
+
+.join_box1 #join_name,
+.join_box1 #join_age {
+  width: 480px;
+  float: left;
+  margin-right: 15px;
+}
+
+.join_box1 #join_gender,
+.join_box1 #join_from {
+  width: 105px;
+  height: 50px;
+  outline: none;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #888;
+}
+.join_box1 #join_gender {
+  margin-bottom: 30px;
+}
+.join_age_box {
+  position: relative;
+}
+
+
+
+/* err 메세지 */
+.err_msg p {
+  display: none;
+  width: 200px;
+  padding: 5px;
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  bottom: 3px;
+  font-size: 12px;
+  color: rgb(255,95,128);
+}
+.err_msg2 p{
+  left: auto;
+  right: 125px;
+  bottom: -15px;
+}
+.err_msg3 p{
+  left: 1px;
+  top: 48px;
+}
+.err_msg4 p{
+  left: 1px;
+  top: 122px;
+}
+
+/* 본인인증 약관동의 */
+.phone_terms {
+  width: 100%;
+  height: 100px;
+  float: left;
+  margin-bottom: 20px;
+}
+.phone_terms_box {
+  position: relative;
+  z-index: 5;
+  width: 600px;
+  margin: 0 auto;
+}
+.phone_terms_box form {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.phone_terms_box form:nth-child(1) {
+  margin-left: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.phone_terms_box input,
+.phone_terms_box label {
+  cursor: pointer;
+}
+
+
+/* 본인인증 버튼 */
+/* 회원가입 완료 버튼 */
+.phone_veri {
+  width: 100%;
+  height: 60px;
+  float: left;
+}
+.phone_veri_box {
+  width: 600px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.join_btn {
+  width: 600px;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+.phone_veri input,
+.join_btn input {display: none;}
+
+.phone_veri label,
+.join_btn label {
+  display: block;
+  width: 600px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  border: 1px solid #000;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+.phone_veri label {
+  color: #000;
+}
+.join_btn a {
+  color: #fff;
+}
+.join_btn {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.join_btn label {
+  background-color: #002965;
+  border: 1px solid #002965;
+}
+
+/* 본인인증 시 인증확인 박스 */
+.phone_veri_chk {
+  width: 600px;
+  height: 55px;
+  margin: 0 auto;
+  margin-top: 300px;
+}
+#phone_veriChkBox1 {
+  width: 420px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  float: left;
+}
+#phone_veriChkBtn1 {display: none;}
+.phone_veri_chk_box label {
+  display: block;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #002965;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+}
+
+
+.phone_veri_chk {
+  display: none;
+}
+.join_bar_outer {
+  margin-top: 110px;
+  /* 인증되지않았을때 mt 110px */
+  /* 인증되었을때 mt 0px */
+}
+
+
+
+
+
+
+
+/* 약관동의 */
+.terms_chkBox {
+  width: 600px;
+  height: 380px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.terms_chkBox input{
+  margin-bottom: 15px;
+  
+}
+.terms_chkBox label {
+  height: 15px;
+}
+
+.terms_chkBox input,
+.terms_chkBox p {
+  margin-left: 40px;
+}
+.terms_chkBox p {
+  width: 550px;
+  color: #888;
+}
+.ter_ck input {
+  margin-left: 20px;
+}
+.terms_chk_total input {
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+.terms_sms_email input {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+.terms_chkBox span {
+  color: red;
+  margin-left: 5px;
+}
+.chk_span a {
+  color: #888;
+}
+.chk_span {
+  float: right;
+  margin-right: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #888;
+}
+
+.terms_chkBox label {
+  display: inline;
+  width: 100%;
+}
+.terms_chk_total {
+  display: block;
+}
+.terms_chkBox .tr_ck {
+  width: 300px;
+  background-color: pink;
+  margin-left: 20px;
+}
+
+.btn_text_guide {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  color: #888;
+}
+.terms_text {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.8);
+}
+.terms_outer {
+  position: fixed;
+  z-index: 12;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 600px;
+  background-color: #fff;
+}
+.terms_outer h3 {
+  width: 365px;
+  padding: 20px;
+  margin-left: 30px;
+  float: left;
+}
+
+.terms_outer input {
+  display: none;
+}
+.terms_outer label {
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  float: right;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.terms_box {
+  position: fixed;
+  z-index: 13;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 450px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #888;
+}
+
+
+/* 전문보기 span */
+.chk_span1, .chk_span2, .chk_span3,
+.chk_phone_span1, .chk_phone_span2, .chk_phone_span3, .chk_phone_span4 {
+  float: right;
+}
+.chk_span1 a, .chk_span2 a, .chk_span3 a,
+.chk_phone_span1 a, .chk_phone_span2 a, .chk_phone_span3 a, .chk_phone_span4 a {
+  color: #888;
+  border-bottom: 1px solid #888;
+  font-size: 14px;
+  line-height: 25px;
+  box-sizing: border-box;
+}
+
+/* 약관 팝업창 제어 */
+.terms_text {
+  display: none;
+}
+#ter1_skt, /* 약관 팝업창 통신사 선택 */
+#ter2_skt, /* 약관 팝업창 통신사 선택 */
+#ter3_skt, /* 약관 팝업창 통신사 선택 */
+#ter4_skt { /* 약관 팝업창 통신사 선택 */
+  width: 100px;
+  height: 25px;
+  position: absolute;
+  right: 71px;
+  top: 25px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+}
+
+
+
+@media all and (max-width:1530px) {
+  .header {
+    width: 1530px;
+  }
+}
