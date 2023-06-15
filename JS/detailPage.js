@@ -291,10 +291,9 @@ ColorSelectAll.forEach(label => {
   
   ThumbIMG.forEach((element, index) => {
     element.addEventListener('click', function() {
-      DetailThumbIMG.style.backgroundImage = `url(././BACK_IMG/detail${index + 1}.jpeg)`
+      DetailThumbIMG.style.backgroundImage = `url(./BACK_IMG/detail${index + 1}.jpeg)`
     })
   })
-
 
 
 

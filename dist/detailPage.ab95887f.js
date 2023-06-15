@@ -354,7 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
   DetailThumbIMG.style.transition = 'background-image 0.3s';
   ThumbIMG.forEach(function (element, index) {
     element.addEventListener('click', function () {
-      DetailThumbIMG.style.backgroundImage = "url(././BACK_IMG/detail".concat(index + 1, ".jpeg)");
+      DetailThumbIMG.style.backgroundImage = "url(./BACK_IMG/detail".concat(index + 1, ".jpeg)");
     });
   });
 
@@ -467,7 +467,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52169" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60783" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
