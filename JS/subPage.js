@@ -1,5 +1,5 @@
-import ItemList from "./Date_sub.js";
-console.log(ItemList);
+import ItemList from "./Date_sub.js"
+console.log(ItemList)
 
 
 
@@ -16,32 +16,32 @@ console.log(ItemList);
 document.addEventListener("DOMContentLoaded", function () {
   /* HEADER 메뉴 영역 HOVER 시 MENU FULL DWON --------- */
   // 일반 HEADER 영역
-  const Header = document.querySelector("#header");
-  const HeaderOuter = document.querySelector("#header .header_outer");
-  const headerBox = document.querySelector(".header_box");
+  const Header = document.querySelector("#header")
+  const HeaderOuter = document.querySelector("#header .header_outer")
+  const headerBox = document.querySelector(".header_box")
 
   // HEADER MENU
-  const MainMenu = document.querySelector(".mainMenu");
-  const mainMenuUL = document.querySelector(".mainMenu_ul");
-  const mainMenuLI = document.querySelector(".mainMenu_ul li");
+  const MainMenu = document.querySelector(".mainMenu")
+  const mainMenuUL = document.querySelector(".mainMenu_ul")
+  const mainMenuLI = document.querySelector(".mainMenu_ul li")
 
-  const GNB = document.querySelector(".gnb");
-  const LOGO = document.querySelector(".logo");
+  const GNB = document.querySelector(".gnb")
+  const LOGO = document.querySelector(".logo")
 
   // SHEET 영역 Sheet - 전체 / sht 50vh 영역
-  const mainMenuSheet = document.querySelector(".mainMenu_Sheet");
-  const mainMenuSht = document.querySelector(".main_menu_sht");
+  const mainMenuSheet = document.querySelector(".mainMenu_Sheet")
+  const mainMenuSht = document.querySelector(".main_menu_sht")
 
   // SHEET MENU 영역
-  const eachMenuUL = document.querySelector(".each_menu_ul");
-  const eachMenuLI = document.querySelectorAll(".each_menu_ul li");
+  const eachMenuUL = document.querySelector(".each_menu_ul")
+  const eachMenuLI = document.querySelectorAll(".each_menu_ul li")
 
   // SHHET DIV 영역
-  const WomenSheetBox = document.querySelector(".Women_sheet_box");
-  const MenSheetBox = document.querySelector(".Men_sheet_box");
-  const KidsSheetBox = document.querySelector(".Kids_sheet_box");
-  const BrandSheetBox = document.querySelector(".Brand_sheet_box");
-  const NULLSheetBox = document.querySelector(".each_menu_ul li:nth-child(4)");
+  const WomenSheetBox = document.querySelector(".Women_sheet_box")
+  const MenSheetBox = document.querySelector(".Men_sheet_box")
+  const KidsSheetBox = document.querySelector(".Kids_sheet_box")
+  const BrandSheetBox = document.querySelector(".Brand_sheet_box")
+  const NULLSheetBox = document.querySelector(".each_menu_ul li:nth-child(4)")
 
   // Sheet DIV 영역 각각 배열생성
   const Sheets = [
@@ -50,21 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
     KidsSheetBox,
     NULLSheetBox,
     BrandSheetBox,
-  ];
+  ]
 
   // MAIN MENU 마우스 오버시 SHEET ON
   // Main Menu Hover -> Sheet 열림
   // -> (블러처리된 전체영역, sheets 겉 50vh 영역)
-  MainMenu.addEventListener("mouseover", SheetOpen);
+  MainMenu.addEventListener("mouseover", SheetOpen)
 
   function SheetOpen() {
-    mainMenuSheet.style.display = "flex";
-    mainMenuSht.style.display = "flex";
+    mainMenuSheet.style.display = "flex"
+    mainMenuSht.style.display = "flex"
 
-    WomenSheetBox.style.display = "flex";
-    MenSheetBox.style.display = "none";
-    KidsSheetBox.style.display = "none";
-    BrandSheetBox.style.display = "none";
+    WomenSheetBox.style.display = "flex"
+    MenSheetBox.style.display = "none"
+    KidsSheetBox.style.display = "none"
+    BrandSheetBox.style.display = "none"
   }
 
   // forEach 이용하여 각 배열 생성된 Sheets를
@@ -74,185 +74,185 @@ document.addEventListener("DOMContentLoaded", function () {
     li.addEventListener("mouseover", function () {
       Sheets.forEach(function (sheet, sheetIndex) {
         if (liIndex === sheetIndex) {
-          sheet.style.display = "flex";
+          sheet.style.display = "flex"
         } else {
-          sheet.style.display = "none";
+          sheet.style.display = "none"
         }
-      });
-    });
-  });
+      })
+    })
+  })
 
   // Sheets 겉 50vh mouse벗어날 경우 SHEET 전체 OFF
   mainMenuSht.addEventListener("mouseleave", function () {
-    mainMenuSheet.style.display = "none";
-  });
+    mainMenuSheet.style.display = "none"
+  })
 
-  const mainMenuA = document.querySelectorAll(".mainMenu_ul li a");
+  const mainMenuA = document.querySelectorAll(".mainMenu_ul li a")
 
-  const FixLogo = document.querySelector(".logo img");
+  const FixLogo = document.querySelector(".logo img")
 
-  const FixGnbMap = document.querySelector(".gnb_Menu_map img");
-  const FixGnbSearch = document.querySelector(".gnb_Menu_search img");
-  const FixGnbMy = document.querySelector(".gnb_Menu_my img");
-  const FixGnbCart = document.querySelector(".gnb_Menu_cart img");
+  const FixGnbMap = document.querySelector(".gnb_Menu_map img")
+  const FixGnbSearch = document.querySelector(".gnb_Menu_search img")
+  const FixGnbMy = document.querySelector(".gnb_Menu_my img")
+  const FixGnbCart = document.querySelector(".gnb_Menu_cart img")
 
   document.addEventListener("scroll", function () {
     if (window.scrollY >= 100) {
-      HeaderOuter.classList.add("hd_fix");
-      HeaderOuter.style.top = "-25px";
-      HeaderOuter.style.height = "80px";
+      HeaderOuter.classList.add("hd_fix")
+      HeaderOuter.style.top = "-25px"
+      HeaderOuter.style.height = "80px"
       mainMenuA.forEach((index, element) => {
-        mainMenuA[element].style.color = "#fff";
-      });
-      FixGnbMap.setAttribute("src", "./images/GNB_map1.svg");
-      FixGnbSearch.setAttribute("src", "./images/GNB_search1.svg");
-      FixGnbMy.setAttribute("src", "./images/GNB_my1.svg");
-      FixGnbCart.setAttribute("src", "./images/GNB_cart1.svg");
-      FixLogo.setAttribute("src", "./images/FILA LOGO_1.svg");
+        mainMenuA[element].style.color = "#fff"
+      })
+      FixGnbMap.setAttribute("src", "./images/GNB_map1.svg")
+      FixGnbSearch.setAttribute("src", "./images/GNB_search1.svg")
+      FixGnbMy.setAttribute("src", "./images/GNB_my1.svg")
+      FixGnbCart.setAttribute("src", "./images/GNB_cart1.svg")
+      FixLogo.setAttribute("src", "./images/FILA LOGO_1.svg")
       document.querySelector(".mainMenu_ul li:nth-child(4)").style.borderRight =
-        "1px solid #fff";
+        "1px solid #fff"
     } else {
-      HeaderOuter.classList.remove("hd_fix");
+      HeaderOuter.classList.remove("hd_fix")
       mainMenuA.forEach((index, element) => {
-        mainMenuA[element].style.color = "#000";
-      });
-      FixGnbMap.setAttribute("src", "./images/GNB_map2.svg");
-      FixGnbSearch.setAttribute("src", "./images/GNB_search2.svg");
-      FixGnbMy.setAttribute("src", "./images/GNB_my2.svg");
-      FixGnbCart.setAttribute("src", "./images/GNB_cart2.svg");
-      FixLogo.setAttribute("src", "./images/FILA LOGO_2.svg");
+        mainMenuA[element].style.color = "#000"
+      })
+      FixGnbMap.setAttribute("src", "./images/GNB_map2.svg")
+      FixGnbSearch.setAttribute("src", "./images/GNB_search2.svg")
+      FixGnbMy.setAttribute("src", "./images/GNB_my2.svg")
+      FixGnbCart.setAttribute("src", "./images/GNB_cart2.svg")
+      FixLogo.setAttribute("src", "./images/FILA LOGO_2.svg")
       document.querySelector(".mainMenu_ul li:nth-child(4)").style.borderRight =
-        "1px solid #000";
+        "1px solid #000"
     }
-  });
+  })
 
   /* ------------------------------------------------- */
 
   //필터 메뉴 풀다운
 
-  const FilterBlock1 = document.querySelector(".filterSide_block1");
-  const FilterBlock2 = document.querySelector(".filterSide_block2");
-  const filterMenuDown = document.querySelector(".filter_menuDown");
+  const FilterBlock1 = document.querySelector(".filterSide_block1")
+  const FilterBlock2 = document.querySelector(".filterSide_block2")
+  const filterMenuDown = document.querySelector(".filter_menuDown")
 
   FilterBlock1.addEventListener("click", function () {
-    filterMenuDown.style.height = "520px";
-    filterMenuDown.style.transition = "0.5s";
+    filterMenuDown.style.height = "520px"
+    filterMenuDown.style.transition = "0.5s"
     filterMenuDown.style.opacity = "1"
-    FilterBlock1.style.display = "none";
-    FilterBlock2.style.display = "block";
-  });
+    FilterBlock1.style.display = "none"
+    FilterBlock2.style.display = "block"
+  })
   FilterBlock2.addEventListener("click", function () {
-    filterMenuDown.style.height = "0px";
+    filterMenuDown.style.height = "0px"
     filterMenuDown.style.opacity = "0"
-    FilterBlock1.style.display = "block";
-    FilterBlock2.style.display = "none";
-  });
+    FilterBlock1.style.display = "block"
+    FilterBlock2.style.display = "none"
+  })
 
   // 필터 [전체] Click시 색상 고정
 
-  const FilterAllLI = document.querySelectorAll(".Filter_ALL ul li");
-  let prevElement = null; // 이전에 선택된 요소를 추적하는 변수
+  const FilterAllLI = document.querySelectorAll(".Filter_ALL ul li")
+  let prevElement = null // 이전에 선택된 요소를 추적하는 변수
 
   FilterAllLI.forEach((element, index) => {
-    let ColorON = 0; // ColorON 변수 선언 및 초기값 설정
+    let ColorON = 0 // ColorON 변수 선언 및 초기값 설정
 
     element.addEventListener("click", function () {
       if (prevElement) {
         // 이전에 선택된 요소가 있으면 스타일을 변경
-        prevElement.style.color = "#000";
-        prevElement.style.fontWeight = "unset";
-        ColorON = 0;
+        prevElement.style.color = "#000"
+        prevElement.style.fontWeight = "unset"
+        ColorON = 0
       }
 
       if (ColorON == 0) {
-        element.style.color = "#002053";
-        element.style.fontWeight = "bold";
-        ColorON = 1; // ColorON 변수의 값을 변경
+        element.style.color = "#002053"
+        element.style.fontWeight = "bold"
+        ColorON = 1 // ColorON 변수의 값을 변경
       } else if (ColorON == 1) {
-        element.style.color = "#000";
-        element.style.fontWeight = "unset";
-        ColorON = 0; // ColorON 변수의 값을 변경
+        element.style.color = "#000"
+        element.style.fontWeight = "unset"
+        ColorON = 0 // ColorON 변수의 값을 변경
       }
 
-      prevElement = element; // 이전에 선택된 요소를 업데이트
-    });
-  });
+      prevElement = element // 이전에 선택된 요소를 업데이트
+    })
+  })
 
   // 필터 [스포츠] Click시 색상 고정
   const FilterSportsInput = document.querySelectorAll(
     ".Filter_Sports ul li input"
-  );
+  )
   const FilterSportsLabel = document.querySelectorAll(
     ".Filter_Sports ul li Label"
-  );
+  )
 
   FilterSportsInput.forEach((input) => {
     input.addEventListener("click", function () {
       if (input.checked) {
         FilterSportsLabel.forEach((element, index) => {
-          element.style.color = "#002053";
-          element.style.fontWeight = "bold";
-        });
+          element.style.color = "#002053"
+          element.style.fontWeight = "bold"
+        })
       } else {
         FilterSportsLabel.forEach((element, index) => {
-          element.style.color = "#000";
-          element.style.fontWeight = "unset";
-        });
+          element.style.color = "#000"
+          element.style.fontWeight = "unset"
+        })
       }
-    });
-  });
+    })
+  })
 
 
   /* ------------------------------------------------- */
 
   // 정렬 기능 이미지 변경
-  const Array2 = document.querySelector(".two_array img");
-  const Array4 = document.querySelector(".four_array img");
+  const Array2 = document.querySelector(".two_array img")
+  const Array4 = document.querySelector(".four_array img")
 
-  const itemArr = [];
+  const itemArr = []
   for (let i = 1; i <= 24; i++) {
-    itemArr.push(document.querySelector(`.item_Array_${i}`));
+    itemArr.push(document.querySelector(`.item_Array_${i}`))
   }
 
-  const labelArr = [];
+  const labelArr = []
   for (let i = 1; i <= 24; i++) {
-    labelArr.push(document.querySelector(`.btm_btn_${i} label`));
+    labelArr.push(document.querySelector(`.btm_btn_${i} label`))
   }
 
-  const btmTxt = document.querySelector(".btm_txt");
+  const btmTxt = document.querySelector(".btm_txt")
 
-  let on = 1;
+  let on = 1
 
   Array2.addEventListener("click", function () {
     if (on == 1) {
-      Array2.setAttribute("src", "./two_button2.png");
-      Array4.setAttribute("src", "./four_button1.png");
+      Array2.setAttribute("src", "./two_button2.png")
+      Array4.setAttribute("src", "./four_button1.png")
       itemArr.forEach(function (element) {
-        element.style.width = "460px";
-        element.style.height = "580px";
-      });
+        element.style.width = "460px"
+        element.style.height = "580px"
+      })
       labelArr.forEach(function (element) {
-        element.style.width = "125px";
-      });
-      on = 0;
+        element.style.width = "125px"
+      })
+      on = 0
     }
-  });
+  })
 
   Array4.addEventListener("click", function () {
     if (on == 0) {
-      Array2.setAttribute("src", "./two_button1.png");
-      Array4.setAttribute("src", "./four_button2.png");
+      Array2.setAttribute("src", "./two_button1.png")
+      Array4.setAttribute("src", "./four_button2.png")
       itemArr.forEach(function (element) {
-        element.style.width = "340px";
-        element.style.height = "460px";
-        btmTxt.style.height = "120px";
-      });
+        element.style.width = "340px"
+        element.style.height = "460px"
+        btmTxt.style.height = "120px"
+      })
       labelArr.forEach(function (element) {
-        element.style.width = "90px";
-      });
-      on = 1;
+        element.style.width = "90px"
+      })
+      on = 1
     }
-  });
+  })
 
   /* Item에 이미지 넣기 */
   const ItemArray = [
@@ -280,41 +280,41 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".item_Array_22"),
     document.querySelector(".item_Array_23"),
     document.querySelector(".item_Array_24"),
-  ];
+  ]
 
   ItemArray.forEach((Element, index) => {
-    const ItemIMG = document.createElement("img");
-    const ItemImgA = document.createElement("a");
-    ItemImgA.setAttribute("href", "#!");
+    const ItemIMG = document.createElement("img")
+    const ItemImgA = document.createElement("a")
+    ItemImgA.setAttribute("href", "#!")
 
-    ItemIMG.setAttribute("src", ItemList[index].src);
-    Element.appendChild(ItemImgA);
-    ItemImgA.appendChild(ItemIMG);
-  });
+    ItemIMG.setAttribute("src", ItemList[index].src)
+    Element.appendChild(ItemImgA)
+    ItemImgA.appendChild(ItemIMG)
+  })
 
-  const ItemImgAChange = document.querySelector(".item_Array_1 a");
-  ItemImgAChange.setAttribute("href", "./detailPage.html");
+  const ItemImgAChange = document.querySelector(".item_Array_1 a")
+  ItemImgAChange.setAttribute("href", "./detailPage.html")
 
   /* Item 카테고리 넣기 */
 
-  const btmTxtArr = [];
+  const btmTxtArr = []
   for (let i = 1; i <= 24; i++) {
-    btmTxtArr.push(document.querySelector(`.btm_txt_${i}`));
+    btmTxtArr.push(document.querySelector(`.btm_txt_${i}`))
   }
 
   btmTxtArr.forEach((element, index) => {
-    const p = document.createElement("p");
-    const h3 = document.createElement("h3");
-    const h4 = document.createElement("h4");
+    const p = document.createElement("p")
+    const h3 = document.createElement("h3")
+    const h4 = document.createElement("h4")
 
-    p.textContent = ItemList[index].category.join(' ');
-    h3.textContent = ItemList[index].itemName;
-    h4.textContent = ItemList[index].price;
+    p.textContent = ItemList[index].category.join(' ')
+    h3.textContent = ItemList[index].itemName
+    h4.textContent = ItemList[index].price
 
-    element.appendChild(p);
-    element.appendChild(h3);
-    element.appendChild(h4);
-  });
+    element.appendChild(p)
+    element.appendChild(h3)
+    element.appendChild(h4)
+  })
 
 
 
@@ -345,38 +345,38 @@ document.addEventListener("DOMContentLoaded", function () {
 // ====== 필터 전체 버튼 =======
   FilterAllarr.addEventListener('click', function() {
     sportsBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     colorBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     sizeBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     genderBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     priceBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
 
     SizeFt.forEach(back => {
-      back.element.style.backgroundColor = '#fff';
-      back.element.style.color = '#000';
-      back.element.style.border = '1px solid #ccc';
-      back.element.style.boxSizing = 'border-Box';
-    });
+      back.element.style.backgroundColor = '#fff'
+      back.element.style.color = '#000'
+      back.element.style.border = '1px solid #ccc'
+      back.element.style.boxSizing = 'border-Box'
+    })
 
 
     ColorFt.forEach(border => {
-      border.element.style.border = '3px solid #fff';
-      border.element.style.boxSizing = 'border-Box';
-    });
+      border.element.style.border = '3px solid #fff'
+      border.element.style.boxSizing = 'border-Box'
+    })
 
     
 
@@ -391,38 +391,38 @@ document.addEventListener("DOMContentLoaded", function () {
 // ======== 초기화 버튼 ========
   filterReset.addEventListener('click', function() {
     sportsBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     colorBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     sizeBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     genderBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
     priceBtn.forEach(checkbox => {
-      checkbox.element.checked = false;
-    });
+      checkbox.element.checked = false
+    })
 
 
     SizeFt.forEach(back => {
-      back.element.style.backgroundColor = '#fff';
-      back.element.style.color = '#000';
-      back.element.style.border = '1px solid #ccc';
-      back.element.style.boxSizing = 'border-Box';
-    });
+      back.element.style.backgroundColor = '#fff'
+      back.element.style.color = '#000'
+      back.element.style.border = '1px solid #ccc'
+      back.element.style.boxSizing = 'border-Box'
+    })
 
 
     ColorFt.forEach(border => {
-      border.element.style.border = '3px solid #fff';
-      border.element.style.boxSizing = 'border-Box';
-    });
+      border.element.style.border = '3px solid #fff'
+      border.element.style.boxSizing = 'border-Box'
+    })
 
     ItemList.forEach((item, index) => {
       const itemElement = document.querySelector(`.item_Array_${index + 1}`)
@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ======== 첫번째 대분류 카테고리 필터 ========
   Filter_All1.addEventListener('click', function () {
     ItemList.forEach((item1, index) => {
-      const itemElement = document.querySelector(`.item_Array_${index + 1}`);
+      const itemElement = document.querySelector(`.item_Array_${index + 1}`)
       if (item1.cateAll.includes('wind')) {
         itemElement.style.display = 'block'
       } else {
@@ -497,21 +497,21 @@ const Filter_Sports5 = document.getElementById('Filter_Sports_btn5')
     { element: Filter_Sports3, value: 'lifestyle' },
     { element: Filter_Sports4, value: 'training' },
     { element: Filter_Sports5, value: 'golf' }
-  ];
+  ]
 
   function filterSports() {
     const checkedValues = sportsBtn
       .filter(checkbox => checkbox.element.checked)
-      .map(checkbox => checkbox.value);
+      .map(checkbox => checkbox.value)
 
-    let result = false;
+    let result = false
     ItemList.forEach((item, index) => {
-      const itemElement = document.querySelector(`.item_Array_${index + 1}`);
+      const itemElement = document.querySelector(`.item_Array_${index + 1}`)
       if (checkedValues.length === 0 || checkedValues.some(value => item.sports.includes(value))) {
-        itemElement.style.display = 'block';
-        result = true;
+        itemElement.style.display = 'block'
+        result = true
       } else {
-        itemElement.style.display = 'none';
+        itemElement.style.display = 'none'
       }
     })
 
@@ -524,8 +524,8 @@ const Filter_Sports5 = document.getElementById('Filter_Sports_btn5')
   }
 
   sportsBtn.forEach(checkbox => {
-    checkbox.element.addEventListener('change', filterSports);
-  });
+    checkbox.element.addEventListener('change', filterSports)
+  })
 
 
 
@@ -543,23 +543,23 @@ const Filter_Color4 = document.getElementById('Filter_Color4')
     { element: Filter_Color2, value: 'blue' },
     { element: Filter_Color3, value: 'green' },
     { element: Filter_Color4, value: 'yellow' },
-  ];
+  ]
 
   function filterColors() {
     const checkedValues = colorBtn
       .filter(checkbox => checkbox.element.checked)
-      .map(checkbox => checkbox.value);
+      .map(checkbox => checkbox.value)
 
-    let result = false;
+    let result = false
     ItemList.forEach((item, index) => {
-      const itemElement = document.querySelector(`.item_Array_${index + 1}`);
+      const itemElement = document.querySelector(`.item_Array_${index + 1}`)
       if (checkedValues.length === 0 || checkedValues.some(value => item.color.includes(value))) {
-        itemElement.style.display = 'block';
-        result = true;
+        itemElement.style.display = 'block'
+        result = true
       } else {
-        itemElement.style.display = 'none';
+        itemElement.style.display = 'none'
       }
-    });
+    })
 
     
     if (!result) {
@@ -571,8 +571,8 @@ const Filter_Color4 = document.getElementById('Filter_Color4')
   }
 
   colorBtn.forEach(checkbox => {
-    checkbox.element.addEventListener('change', filterColors);
-  });
+    checkbox.element.addEventListener('change', filterColors)
+  })
 
   
 
@@ -584,19 +584,19 @@ const Filter_Color4 = document.getElementById('Filter_Color4')
     { element: document.querySelector('label[for="Filter_Color2"]'), checkbox: document.getElementById('Filter_Color2') },
     { element: document.querySelector('label[for="Filter_Color3"]'), checkbox: document.getElementById('Filter_Color3') },
     { element: document.querySelector('label[for="Filter_Color4"]'), checkbox: document.getElementById('Filter_Color4') }
-  ];
+  ]
   
   ColorFt.forEach(border => {
     border.checkbox.addEventListener('change', function() {
       if (border.checkbox.checked) {
-        border.element.style.border = '3px solid #000';
-        border.element.style.boxSizing = 'border-Box';
+        border.element.style.border = '3px solid #000'
+        border.element.style.boxSizing = 'border-Box'
       } else {
-        border.element.style.border = '3px solid #fff';
-        border.element.style.boxSizing = 'border-Box';
+        border.element.style.border = '3px solid #fff'
+        border.element.style.boxSizing = 'border-Box'
       }
-    });
-  });
+    })
+  })
 
 
 
@@ -628,11 +628,11 @@ const Filter_Size9 = document.getElementById('Filter_Size9')
   function filterSize() {
     const checkedValues = sizeBtn
       .filter(checkbox => checkbox.element.checked)
-      .map(checkbox => checkbox.value);
+      .map(checkbox => checkbox.value)
 
     let result = false
     ItemList.forEach((item, index) => {
-      const itemElement = document.querySelector(`.item_Array_${index + 1}`);
+      const itemElement = document.querySelector(`.item_Array_${index + 1}`)
       if (checkedValues.length === 0 || checkedValues.some(value => item.size.includes(value))) {
         itemElement.style.display = 'block'
         result = true
@@ -670,23 +670,23 @@ const SizeFt = [
   { element: document.querySelector('label[for="Filter_Size7"]'), checkbox: document.getElementById('Filter_Size7') },
   { element: document.querySelector('label[for="Filter_Size8"]'), checkbox: document.getElementById('Filter_Size8') },
   { element: document.querySelector('label[for="Filter_Size9"]'), checkbox: document.getElementById('Filter_Size9') },
-];
+]
 
 SizeFt.forEach(back => {
   back.checkbox.addEventListener('change', function() {
     if (back.checkbox.checked) {
-      back.element.style.backgroundColor = '#002053';
-      back.element.style.color = '#fff';
-      back.element.style.border = '1px solid #002053';
-      back.element.style.boxSizing = 'border-Box';
+      back.element.style.backgroundColor = '#002053'
+      back.element.style.color = '#fff'
+      back.element.style.border = '1px solid #002053'
+      back.element.style.boxSizing = 'border-Box'
     } else {
-      back.element.style.backgroundColor = '#fff';
-      back.element.style.color = '#000';
-      back.element.style.border = '1px solid #ccc';
-      back.element.style.boxSizing = 'border-Box';
+      back.element.style.backgroundColor = '#fff'
+      back.element.style.color = '#000'
+      back.element.style.border = '1px solid #ccc'
+      back.element.style.boxSizing = 'border-Box'
     }
-  });
-});
+  })
+})
 
 
 
@@ -709,24 +709,24 @@ const priceBtn = [
   { element: Filter_Price3, min: 49000, max: 59000 },
   { element: Filter_Price4, min: 59000, max: 79000 },
   { element: Filter_Price5, min: 79000, max: Infinity }
-];
+]
 
 function filterPrice() {
   const checkedValues = priceBtn
     .filter(checkbox => checkbox.element.checked)
-    .map(checkbox => ({ min: checkbox.min, max: checkbox.max }));
+    .map(checkbox => ({ min: checkbox.min, max: checkbox.max }))
 
-  let result = false;
+  let result = false
   ItemList.forEach((item, index) => {
-    const itemElement = document.querySelector(`.item_Array_${index + 1}`);
-    const price = Number(item.price.replace(/[^0-9]/g, ''));
+    const itemElement = document.querySelector(`.item_Array_${index + 1}`)
+    const price = Number(item.price.replace(/[^0-9]/g, ''))
     if (checkedValues.length === 0 || checkedValues.some(value => price >= value.min && price < value.max)) {
-      itemElement.style.display = 'block';
-      result = true;
+      itemElement.style.display = 'block'
+      result = true
     } else {
-      itemElement.style.display = 'none';
+      itemElement.style.display = 'none'
     }
-  });
+  })
 
   if (!result) {
     noFilter.style.display = 'block'
@@ -736,8 +736,8 @@ function filterPrice() {
 }
 
 priceBtn.forEach(checkbox => {
-  checkbox.element.addEventListener('change', filterPrice);
-});
+  checkbox.element.addEventListener('change', filterPrice)
+})
 
 
 
@@ -753,21 +753,21 @@ const genderBtn = [
   { element: GenderMen, value: 'men' },
   { element: GenderWomen, value: 'women' },
   { element: Unisex, value: 'unisex' },
-];
+]
 
 function filtergenders() {
   const checkedValues = genderBtn
     .filter(checkbox => checkbox.element.checked)
-    .map(checkbox => checkbox.value);
+    .map(checkbox => checkbox.value)
 
-  let result = false;
+  let result = false
   ItemList.forEach((item, index) => {
-    const itemElement = document.querySelector(`.item_Array_${index + 1}`);
+    const itemElement = document.querySelector(`.item_Array_${index + 1}`)
     if (checkedValues.length === 0 || checkedValues.every(value => item.gender.includes(value))) {
-      itemElement.style.display = 'block';
-      result = true;
+      itemElement.style.display = 'block'
+      result = true
     } else {
-      itemElement.style.display = 'none';
+      itemElement.style.display = 'none'
     }
   })
 
@@ -780,8 +780,8 @@ function filtergenders() {
 }
 
 genderBtn.forEach(checkbox => {
-  checkbox.element.addEventListener('change', filtergenders);
-});
+  checkbox.element.addEventListener('change', filtergenders)
+})
 
 
 
@@ -849,4 +849,4 @@ genderBtn.forEach(checkbox => {
 
 
 
-});
+})
