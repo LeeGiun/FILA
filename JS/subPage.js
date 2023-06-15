@@ -11,7 +11,6 @@ console.log(ItemList)
 
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
   /* HEADER 메뉴 영역 HOVER 시 MENU FULL DWON --------- */
   // 일반 HEADER 영역
