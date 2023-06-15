@@ -225,8 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Array2.addEventListener("click", function () {
     if (on == 1) {
-      Array2.setAttribute("src", "./two_button2.png")
-      Array4.setAttribute("src", "./four_button1.png")
+      Array2.setAttribute("src", "./images/two_button2.png")
+      Array4.setAttribute("src", "./images/four_button1.png")
       itemArr.forEach(function (element) {
         element.style.width = "460px"
         element.style.height = "580px"
@@ -240,8 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Array4.addEventListener("click", function () {
     if (on == 0) {
-      Array2.setAttribute("src", "./two_button1.png")
-      Array4.setAttribute("src", "./four_button2.png")
+      Array2.setAttribute("src", "./images/two_button1.png")
+      Array4.setAttribute("src", "./images/four_button2.png")
       itemArr.forEach(function (element) {
         element.style.width = "340px"
         element.style.height = "460px"
