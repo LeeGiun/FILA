@@ -1,3 +1,173 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/4_IdPwSearch.278dce2a.css"><link rel="icon shortcut" href="/FILA_favicon2.0f340b99.png" type="image/x-icon"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"><title>ID / PW 찾기 | FILA</title></head><script>document.addEventListener("DOMContentLoaded",function(){document.querySelector(".kakao_box label a").addEventListener("click",function(){alert("지금 카카오 간편가입 서비스는 아쉽게도 준비중입니다. 곧 만나요!")});var e=document.getElementById("IdPw_btn"),t=document.querySelector(".IdPw_btnChk"),n=(document.querySelectorAll("#IdPw_Tel1 select option"),document.querySelector("#IdPw_Tel1")),d=(document.querySelectorAll("#IdPw_Tel2 select option"),document.querySelector("#IdPw_Tel2")),l=document.getElementById("IdPw_pw"),c=document.getElementById("IdPw_id"),o=document.getElementById("IdPw_btnChk2"),u=document.getElementById("IdPw_btnChk1");e.addEventListener("click",function(){1==n.selectedIndex&&0==d.selectedIndex&&c.value==r&&l.value==a?(t.style.display="block",alert("인증번호를 SMS으로 발송했습니다. 인증번호를 입력해주세요.")):(alert("일치하지않습니다. 다시입력하세요"),t.style.display="none")});var r="이기운",a="12341234";o.addEventListener("click",function(){"123123"===u.value?alert("인증이 완료되었습니다."):alert("인증번호를 다시 확인해주세요.")})});</script><style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/4_IdPwSearch.57c9cd17.css">
+  <link rel="shortcut icon" href="/FILA_favicon2.5dab2da8.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>ID / PW 찾기 | FILA</title>
+<script src="/4_IdPwSearch.57c9cd17.js"></script></head>
+<!-- JAVASCRIPT -->
+<script>document.addEventListener('DOMContentLoaded', function () {
+  // 카카오 메세지
+  var kakaoBtn = document.querySelector('.kakao_box label a');
+  kakaoBtn.addEventListener('click', function () {
+    alert('지금 카카오 간편가입 서비스는 아쉽게도 준비중입니다. 곧 만나요!');
+  });
 
-</style><body> <div class="warp"> <header class="header"> <div class="logo"> <a href="/index.html"> <img src="/FILA LOGO_2.7a693d44.svg" alt="LOGO"> </a> </div> <div class="gnb"> <ul class="gnb_box"> <li class="map"> <a href="#!"> <img src="/GNB_map2.ede3c07d.svg" alt="MAP"> </a> </li> <li class="search"> <a href="#!"> <img src="/GNB_search2.9a61e087.svg" alt="SEARCH"> </a> </li> <li class="mypage"> <a href="/2_login.html"> <img src="/GNB_my2.1f2e3993.svg" alt="MAPAGE"> </a> </li> <li class="cart"> <a href="#!"> <img src="/GNB_cart2.201542ce.svg" alt="CART"> </a> </li> </ul> </div> <div class="lnb"> <ul class="lnb_box"> <li><a href="#!">WOMEN</a></li> <li><a href="#!">MEN</a></li> <li><a href="#!">KIDS</a></li> <li class="bar"></li> <li><a href="#!">BRAND</a></li> </ul> </div> </header> <div class="IdPw_main"> <div class="IdPw_main_box"> <h1>아이디 / 비밀번호 찾기</h1> <div class="kakao_box"> <form action=""> <h4>카카오 연동을 하시면, 아이디 / 비밀번호 찾기 없이 바로 로그인이 가능합니다.</h4> <input type="button" name="kakao_btn" id="kakao_btn"> <label for="kakao_btn"> <a href="#!"> 카카오 연동 & 로그인 </a> </label> </form> </div> <div class="black IdPw_bttn_bar"></div> <div class="IdPw_box1"> <form action="" id="idPw_box1_from"> <input type="text" name="IdPw_id" id="IdPw_id" placeholder="이름"> <select name="IdPw_Tel1" id="IdPw_Tel1"> <option value="SKT">SKT</option> <option value="KT">KT</option> <option value="LGU+">LGU+</option> <option value="알뜰폰(SKT)">알뜰폰(SKT)</option> <option value="알뜰폰(KT)">알뜰폰(KT)</option> <option value="알뜰폰(LGU+)">알뜰폰(LGU+)</option> </select> <select name="IdPw_Tel2" id="IdPw_Tel2"> <option value="010">010</option> <option value="011">011</option> <option value="017">017</option> <option value="018">018</option> <option value="019">019</option> </select> <input type="text" name="IdPw_pw" id="IdPw_pw" placeholder="휴대폰번호 뒤 7~8자리" maxlength="8"> </form> </div> <div class="IdPw_btn"> <form action=""> <input type="button" name="IdPw_btn" id="IdPw_btn"> <label for="IdPw_btn">인증번호 요청</label> </form> </div> <div class="IdPw_btnChk"> <form action=""> <input type="text" name="IdPw_btnChk" id="IdPw_btnChk1"> <input type="button" name="IdPw_btnChk2" id="IdPw_btnChk2"> <label for="IdPw_btnChk2">인증번호 확인</label> </form> </div> </div> </div> </div> </body></html>
+  // 인증번호 버튼 클릭 시 인증번호 입력창 생성
+
+  var IdPwBtn = document.getElementById('IdPw_btn');
+  var IdPwBtnChk = document.querySelector('.IdPw_btnChk');
+  var IdPwselectOption1 = document.querySelectorAll('#IdPw_Tel1 select option');
+  var selectElement1 = document.querySelector('#IdPw_Tel1');
+  var IdPwselectOption2 = document.querySelectorAll('#IdPw_Tel2 select option');
+  var selectElement2 = document.querySelector('#IdPw_Tel2');
+  var IdPwNum = document.getElementById('IdPw_pw');
+  var IdPwName = document.getElementById('IdPw_id');
+  var IdPwBtnChk2 = document.getElementById('IdPw_btnChk2');
+  var IdPwBtnChk1 = document.getElementById('IdPw_btnChk1');
+  IdPwBtn.addEventListener('click', btnOpen);
+  var Name = '이기운';
+  var TelNum = '12341234';
+  function btnOpen() {
+    if (selectElement1.selectedIndex == 1 && selectElement2.selectedIndex == 0 && IdPwName.value == Name && IdPwNum.value == TelNum) {
+      IdPwBtnChk.style.display = 'block';
+      alert('인증번호를 SMS으로 발송했습니다. 인증번호를 입력해주세요.');
+    } else {
+      alert('일치하지않습니다. 다시입력하세요');
+      IdPwBtnChk.style.display = 'none';
+    }
+  }
+
+  // 정보가 맞을 경우 인증번호 전송
+  IdPwBtnChk2.addEventListener('click', function () {
+    if (IdPwBtnChk1.value === '123123') {
+      alert('인증이 완료되었습니다.');
+    } else {
+      alert('인증번호를 다시 확인해주세요.');
+    }
+  });
+});</script>
+<!-- CSS -->
+<style>
+
+</style>
+<body>
+  <div class="warp">
+    <header class="header">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/FILA LOGO_2.7bd27530.svg" alt="LOGO">
+        </a>
+      </div>
+      <div class="gnb">
+        <ul class="gnb_box">
+          <li class="map">
+            <a href="#!">
+              <img src="/GNB_map2.5d094f4f.svg" alt="MAP">
+            </a>
+          </li>
+          <li class="search">
+            <a href="#!">
+              <img src="/GNB_search2.564e62bd.svg" alt="SEARCH">
+            </a>
+          </li>
+          <li class="mypage">
+            <a href="/2_login.html">
+              <img src="/GNB_my2.5e521c69.svg" alt="MAPAGE">
+            </a>
+          </li>
+          <li class="cart">
+            <a href="#!">
+              <img src="/GNB_cart2.52b2acdf.svg" alt="CART">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lnb">
+        <ul class="lnb_box">
+          <li><a href="#!">WOMEN</a></li>
+          <li><a href="#!">MEN</a></li>
+          <li><a href="#!">KIDS</a></li>
+          <li class="bar"></li>
+          <li><a href="#!">BRAND</a></li>
+        </ul>
+      </div>
+    </header>
+
+
+
+
+
+    <div class="IdPw_main">
+      <div class="IdPw_main_box">
+        <h1>아이디 / 비밀번호 찾기</h1>
+
+
+        <div class="kakao_box">
+          <form action="">
+            <h4>카카오 연동을 하시면, 아이디 / 비밀번호 찾기 없이 바로 로그인이 가능합니다.</h4>
+            <input type="button" name="kakao_btn" id="kakao_btn">
+            <label for="kakao_btn">
+              <a href="#!">
+                카카오 연동 & 로그인
+              </a>
+            </label>
+          </form>
+        </div>
+
+
+        <div class="IdPw_bttn_bar black"></div>
+
+        
+        <div class="IdPw_box1">
+          <form action="" id="idPw_box1_from">
+            <input type="text" name="IdPw_id" id="IdPw_id" placeholder="이름">
+            <select name="IdPw_Tel1" id="IdPw_Tel1">
+              <option value="SKT">SKT</option>
+              <option value="KT">KT</option>
+              <option value="LGU+">LGU+</option>
+              <option value="알뜰폰(SKT)">알뜰폰(SKT)</option>
+              <option value="알뜰폰(KT)">알뜰폰(KT)</option>
+              <option value="알뜰폰(LGU+)">알뜰폰(LGU+)</option>
+            </select>
+            <select name="IdPw_Tel2" id="IdPw_Tel2">
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="017">017</option>
+              <option value="018">018</option>
+              <option value="019">019</option>
+            </select>
+            <input type="text" name="IdPw_pw" id="IdPw_pw" placeholder="휴대폰번호 뒤 7~8자리" maxlength="8">
+          </form>
+        </div>
+        
+        
+        
+        <div class="IdPw_btn">
+          <form action="">
+            <input type="button" name="IdPw_btn" id="IdPw_btn">
+            <label for="IdPw_btn">인증번호 요청</label>
+          </form>
+        </div>
+        
+        
+
+        <div class="IdPw_btnChk">
+          <form action="">
+            <input type="text" name="IdPw_btnChk" id="IdPw_btnChk1">
+            <input type="button" name="IdPw_btnChk2" id="IdPw_btnChk2">
+            <label for="IdPw_btnChk2">인증번호 확인</label>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
