@@ -354,8 +354,9 @@ document.addEventListener("DOMContentLoaded", function () {
   DetailThumbIMG.style.transition = 'background-image 0.3s';
   ThumbIMG.forEach(function (element, index) {
     element.addEventListener('click', function () {
-      DetailThumbIMG.style.backgroundImage = "url(./BACK_IMG/detail".concat(index + 1, ".jpeg)");
-    });
+      /*       DetailThumbIMG.style.backgroundImage = `url(./BACK_IMG/detail${index + 1}.jpeg)` */
+      DetailThumbIMG.style.backgroundImage = "url(../CSS/BACK_IMG/detail".concat(index + 1, ".jpeg)");
+    }); // Git에 올릴때는 아래 // parcel-bundler로 할때는 위 사용
   });
 
   // -------------------------------------------
@@ -467,7 +468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60783" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62026" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
