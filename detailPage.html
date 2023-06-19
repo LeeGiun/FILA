@@ -27,10 +27,14 @@
       <div class="QuickMenu_box">
         <div class="QuickMenu_My Q_menu">
           <div class="QuickMy_img">
-            <img src="./images/Quick_1.png" alt="">
+            <a href="./2_login.html">
+              <img src="./images/Quick_1.png" alt="">
+            </a>
           </div>
           <div class="QuickMy_txt Q_txt">
-            <p>마이페이지</p>
+            <a href="./2_login.html">
+              <p>마이페이지</p>
+            </a>
           </div>
         </div>
         <div class="QuickMenu_DeliveryCheck Q_menu">
@@ -989,14 +993,111 @@
     <section class="Review">
       <div class="Review_write">
         <div class="Review_write_box">
-          <textarea class="RVwrite" placeholder="리뷰를 작성해보세요!" autofocus onkeypress="JavaScript:press(this.form)">
+          <textarea class="RVwrite" placeholder="60자 이하 리뷰 작성이 가능합니다." autofocus maxlength="60" onkeypress="JavaScript:press(this.form)">
+          </textarea>
+          <div class="add_ReviewBox">
+            <input type="button" id="RVwrite_btn">
+            <label for="RVwrite_btn">리뷰등록하기</label>
+          </div>
+          <div class="close_ReviewBox">
+            <input type="button" id="close_btn">
+            <label for="close_btn">
+              <i class="fas fa-times"></i>
+            </label>
+          </div>
+          <div class="star_div">
+            <h1>별점 평가</h1>
+            <div class="scoreFive score_Div">
+              <input type="checkbox" id="starFive" value="별점 5점">
+              <label for="starFive">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <p>별점 5점</p>
+              </label>
+            </div>
+            <div class="scoreFour score_Div">
+              <input type="checkbox" id="starFour" value="별점 4점">
+              <label for="starFour">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <p>별점 4점</p>
+              </label>
+            </div>
+            <div class="scoreThree score_Div">
+              <input type="checkbox" id="starThree" value="별점 3점">
+              <label for="starThree">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <p>별점 3점</p>
+              </label>
+            </div>
+            <div class="scoreTwo score_Div">
+              <input type="checkbox" id="starTwo" value="별점 2점">
+              <label for="starTwo">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <p>별점 2점</p>
+              </label>
+            </div>
+            <div class="scoreOne score_Div">
+              <input type="checkbox" id="starOne" value="별점 1점">
+              <label for="starOne">
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <p>별점 1점</p>
+              </label>
+            </div>
+          </div>
 
-          <input type="button" id="RVwrite_btn">
-          <label for="RVwrite">리뷰등록하기</label>
+          <div class="size_div">
+            <h1>구매 사이즈</h1>
+            <input type="checkbox" id="size75_Label" value="75사이즈">
+            <label for="size75_Label">75</label>
 
-          <input type="button" id="close_btn">
-          <label for="close_btn">X</label>
-          
+            <input type="checkbox" id="size80_Label" value="80사이즈">
+            <label for="size80_Label">80</label>
+
+            <input type="checkbox" id="size85_Label" value="85사이즈">
+            <label for="size85_Label">85</label>
+
+            <input type="checkbox" id="size90_Label" value="90사이즈">
+            <label for="size90_Label">90</label>
+
+            <input type="checkbox" id="size95_Label" value="95사이즈">
+            <label for="size95_Label">95</label>
+
+            <input type="checkbox" id="size100_Label" value="100사이즈">
+            <label for="size100_Label">100</label>
+
+            <input type="checkbox" id="size105_Label" value="105사이즈">
+            <label for="size105_Label">105</label>
+
+            <input type="checkbox" id="size110_Label" value="110사이즈">
+            <label for="size110_Label">110</label>
+
+            <input type="checkbox" id="size115_Label" value="115사이즈">
+            <label for="size115_Label">115</label>
+          </div>
+          <div class="name_div">
+            <h1>닉네임</h1>
+            <input type="text" id="name_name" name="name_select" placeholder="6자 이하입력">
+          </div>
+
         </div>
       </div>
       <div class="Review_Top">
@@ -1037,27 +1138,27 @@
           <ul class="ReviewLike">
             <li>
               <span>아주 좋아요</span>
-              <span></span>
+              <span class="LikeUp1"></span>
               <span>0</span>
             </li>
             <li>
               <span>맘에 들어요</span>
-              <span></span>
+              <span class="LikeUp2"></span>
               <span>0</span>
             </li>
             <li>
               <span>보통이에요</span>
-              <span></span>
+              <span class="LikeUp3"></span>
               <span>0</span>
             </li>
             <li>
               <span>그냥 그래요</span>
-              <span></span>
+              <span class="LikeUp4"></span>
               <span>0</span>
             </li>
             <li>
               <span>별로 예요</span>
-              <span></span>
+              <span class="LikeUp5"></span>
               <span>0</span>
             </li>
           </ul>
@@ -1167,16 +1268,19 @@
       <div class="Review_Buttom">
         <div class="Review_Buttom_box">
           <ul>
-            <li>별점</li>
+            <li>평가</li>
             <li></li>
-            <li>평가</li> 
+            <li>선택사이즈</li> 
             <li></li>
-            <li>등록일자</li> 
+            <li>닉네임</li> 
             <li></li>
             <li>리뷰내용</li> 
           </ul>
         </div>
         <div class="Review_Buttom_content">
+<!--           <div class="Review_Buttom_content_text">
+
+          </div> -->
         </div>
       </div>
 
@@ -1184,6 +1288,34 @@
 
 
     <section class="QnA">
+
+      <div class="QnA_Text">
+        <div class="QnA_TextBox">
+          <textarea class="QAwrite" placeholder=" 100자 이하 작성이 가능합니다." autofocus maxlength="100">
+          </textarea>
+          <div class="QnA_Name_box">
+            <h1>닉네임</h1>
+            <input type="text" id="QnA_Name" placeholder="닉네임을 작성해주세요" maxlength="8">
+          </div>
+
+          <div class="QnA_Phone_box">
+            <h1>연락처 또는 E-mail</h1>
+            <input type="text" id="QnA_Phone" maxlength="30" placeholder="연락받을 번호 또는 E-mail">
+          </div>
+
+          <input type="button" id="QnA_Button">
+          <label for="QnA_Button">작성 등록하기</label>
+
+          <div class="QnAClose">
+            <input type="button" id="QnACloseLabel">
+            <label for="QnACloseLabel">
+              <i class="fas fa-times"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
       <div class="QnA_Top">
         <div class="QnA_Top_Img"></div>
         <div class="QnA_Top_Right">
@@ -1191,6 +1323,21 @@
           <div class="QnA_btn">
             <input type="button" id="QnA_btnLabel">
             <label for="QnA_btnLabel">문의하기</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="QnA_Content">
+        <div class="QnA_Content_box">
+          <div class="QnA_Content_MenuList">
+            <ul>
+              <li>닉네임</li>
+              <li></li>
+              <li>연락처 또는 E-mail</li>
+              <li></li>
+              <li>문의내용</li>
+            </ul>
+
           </div>
         </div>
       </div>
