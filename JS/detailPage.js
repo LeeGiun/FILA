@@ -297,8 +297,8 @@ ColorSelectAll.forEach(label => {
 
       const imageUrl = `../CSS/BACK_IMG/detail${index + 1}.jpeg`;
       console.log(imageUrl);
-      // DetailThumbIMG.style.backgroundImage = `url(./BACK_IMG/detail${index + 1}.jpeg)`
-      DetailThumbIMG.style.backgroundImage = `url(../CSS/BACK_IMG/detail${index + 1}.jpeg)`
+      DetailThumbIMG.style.backgroundImage = `url(./BACK_IMG/detail${index + 1}.jpeg)`
+      // DetailThumbIMG.style.backgroundImage = `url(../CSS/BACK_IMG/detail${index + 1}.jpeg)`
     }) // Git에 올릴때는 아래 // parcel-bundler로 할때는 위 사용
   })
 

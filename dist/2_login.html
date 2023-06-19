@@ -77,6 +77,103 @@
       alert('아이디 또는 비밀번호가 맞지 않습니다.');
     }
   });
+
+  /* HEADER 메뉴 영역 HOVER 시 MENU FULL DWON --------- */
+  // 일반 HEADER 영역
+  var Header = document.querySelector("#header");
+  var HeaderOuter = document.querySelector("#header .header_outer");
+  var headerBox = document.querySelector(".header_box");
+
+  // HEADER MENU
+  var MainMenu = document.querySelector(".mainMenu");
+  var mainMenuUL = document.querySelector(".mainMenu_ul");
+  var mainMenuLI = document.querySelector(".mainMenu_ul li");
+  var GNB = document.querySelector(".gnb");
+  var LOGO = document.querySelector(".logo");
+
+  // SHEET 영역 Sheet - 전체 / sht 50vh 영역
+  var mainMenuSheet = document.querySelector(".mainMenu_Sheet");
+  var mainMenuSht = document.querySelector(".main_menu_sht");
+
+  // SHEET MENU 영역
+  var eachMenuUL = document.querySelector(".each_menu_ul");
+  var eachMenuLI = document.querySelectorAll(".each_menu_ul li");
+
+  // SHHET DIV 영역
+  var WomenSheetBox = document.querySelector(".Women_sheet_box");
+  var MenSheetBox = document.querySelector(".Men_sheet_box");
+  var KidsSheetBox = document.querySelector(".Kids_sheet_box");
+  var BrandSheetBox = document.querySelector(".Brand_sheet_box");
+  var NULLSheetBox = document.querySelector(".each_menu_ul li:nth-child(4)");
+
+  // Sheet DIV 영역 각각 배열생성
+  var Sheets = [WomenSheetBox, MenSheetBox, KidsSheetBox, NULLSheetBox, BrandSheetBox];
+
+  // MAIN MENU 마우스 오버시 SHEET ON
+  // Main Menu Hover -> Sheet 열림
+  // -> (블러처리된 전체영역, sheets 겉 50vh 영역)
+  MainMenu.addEventListener("mouseover", SheetOpen);
+  function SheetOpen() {
+    mainMenuSheet.style.display = "flex";
+    mainMenuSht.style.display = "flex";
+    WomenSheetBox.style.display = "flex";
+    MenSheetBox.style.display = "none";
+    KidsSheetBox.style.display = "none";
+    BrandSheetBox.style.display = "none";
+  }
+
+  // forEach 이용하여 각 배열 생성된 Sheets를
+  // index값 사용 후 Sheet open
+  // li -> Mouse over -> 각각의 sheet open
+  eachMenuLI.forEach(function (li, liIndex) {
+    li.addEventListener("mouseover", function () {
+      Sheets.forEach(function (sheet, sheetIndex) {
+        if (liIndex === sheetIndex) {
+          sheet.style.display = "flex";
+        } else {
+          sheet.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Sheets 겉 50vh mouse벗어날 경우 SHEET 전체 OFF
+  mainMenuSht.addEventListener("mouseleave", function () {
+    mainMenuSheet.style.display = "none";
+  });
+  var mainMenuA = document.querySelectorAll(".mainMenu_ul li a");
+  var FixLogo = document.querySelector(".logo img");
+  var FixGnbMap = document.querySelector(".gnb_Menu_map img");
+  var FixGnbSearch = document.querySelector(".gnb_Menu_search img");
+  var FixGnbMy = document.querySelector(".gnb_Menu_my img");
+  var FixGnbCart = document.querySelector(".gnb_Menu_cart img");
+  document.addEventListener("scroll", function () {
+    if (window.scrollY >= 100) {
+      HeaderOuter.classList.add("hd_fix");
+      HeaderOuter.style.top = "-25px";
+      HeaderOuter.style.height = "80px";
+      mainMenuA.forEach(function (index, element) {
+        mainMenuA[element].style.color = "#fff";
+      });
+      FixGnbMap.setAttribute("src", "./images/GNB_map1.svg");
+      FixGnbSearch.setAttribute("src", "./images/GNB_search1.svg");
+      FixGnbMy.setAttribute("src", "./images/GNB_my1.svg");
+      FixGnbCart.setAttribute("src", "./images/GNB_cart1.svg");
+      FixLogo.setAttribute("src", "./images/FILA LOGO_1.svg");
+      document.querySelector(".mainMenu_ul li:nth-child(4)").style.borderRight = "1px solid #fff";
+    } else {
+      HeaderOuter.classList.remove("hd_fix");
+      mainMenuA.forEach(function (index, element) {
+        mainMenuA[element].style.color = "#000";
+      });
+      FixGnbMap.setAttribute("src", "./images/GNB_map2.svg");
+      FixGnbSearch.setAttribute("src", "./images/GNB_search2.svg");
+      FixGnbMy.setAttribute("src", "./images/GNB_my2.svg");
+      FixGnbCart.setAttribute("src", "./images/GNB_cart2.svg");
+      FixLogo.setAttribute("src", "./images/FILA LOGO_2.svg");
+      document.querySelector(".mainMenu_ul li:nth-child(4)").style.borderRight = "1px solid #000";
+    }
+  });
 });</script>
 <!-- CSS -->
 <style>
@@ -85,46 +182,390 @@
 
 <body>
   <div class="warp">
-    <header class="header">
-      <div class="logo">
-        <a href="/index.html">
-          <img src="/FILA LOGO_2.7bd27530.svg" alt="LOGO">
-        </a>
+
+    
+    <header id="header" class="page">
+      <div class="header_outer">
+        <div class="header_box">
+          <div class="logo">
+            <a href="/index.html">
+              <picture>
+                <img src="/FILA LOGO_2.7bd27530.svg" alt="FILA_LOGO">
+              </picture>
+            </a>
+          </div> <!-- logo END -->
+
+
+          <div class="mainMenu">
+            <ul class="mainMenu_ul">
+              <li><a href="#!">WOMEN</a></li>
+              <li><a href="#!">MEN</a></li>
+              <li><a href="#!">KIDS</a></li>
+              <li></li>
+              <li><a href="#!">BRAND</a></li>
+            </ul>
+          </div> <!-- mainMenu END -->
+
+
+          <div class="gnb">
+            <div class="gnb_box">
+              <div class="gnb_Menu">
+                <div class="gnb_Menu_map">
+                  <picture>
+                    <a href="#!">
+                      <img src="/GNB_map2.5d094f4f.svg" alt="gnb_map">
+                    </a>
+                  </picture>
+                </div>
+                <div class="gnb_Menu_search">
+                  <picture>
+                    <a href="#!">
+                      <img src="/GNB_search2.564e62bd.svg" alt="gnb_search">
+                    </a>
+                  </picture>
+                </div>
+                <div class="gnb_Menu_my">
+                  <picture>
+                    <a href="#!">
+                      <img src="/GNB_my2.5e521c69.svg" alt="gnb_my">
+                    </a>
+                  </picture>
+                </div>
+                <div class="gnb_Menu_cart">
+                  <picture>
+                    <a href="#!">
+                      <img src="/GNB_cart2.52b2acdf.svg" alt="gnb_cart">
+                    </a>
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div> <!-- gnb END -->
+
+
+          <!-- WOMEN 메뉴 SHEET -->
+          <div class="mainMenu_Sheet">
+
+            <div class="main_menu_sht_outer">
+              <div class="main_menu_sht">
+                <!-- WOMEN 메뉴 헤더 -->
+                <div class="sht_header">
+
+                  <div class="sht_logo">
+                    <a href="/index.html">
+                      <picture>
+                        <img src="/FILA LOGO_2.7bd27530.svg" alt="FILA_LOGO">
+                      </picture>
+                    </a>
+                  </div> <!-- logo END -->
+                  <ul class="each_menu_ul">
+                    <li><a href="#!">WOMEN</a></li>
+                    <li><a href="#!">MEN</a></li>
+                    <li><a href="#!">KIDS</a></li>
+                    <li></li>
+                    <li><a href="#!">BRAND</a></li>
+                  </ul>
+                  <div class="sht_gnb">
+                    <div class="sht_gnb_box">
+                      <div class="sht_gnb_Menu">
+                        <div class="sht_gnb_Menu_map">
+                          <picture>
+                            <a href="#!">
+                              <img src="/GNB_map2.5d094f4f.svg" alt="gnb_map">
+                            </a>
+                          </picture>
+                        </div>
+                        <div class="sht_gnb_Menu_search">
+                          <picture>
+                            <a href="#!">
+                              <img src="/GNB_search2.564e62bd.svg" alt="gnb_search">
+                            </a>
+                          </picture>
+                        </div>
+                        <div class="sht_gnb_Menu_my">
+                          <picture>
+                            <a href="#!">
+                              <img src="/GNB_my2.5e521c69.svg" alt="gnb_my">
+                            </a>
+                          </picture>
+                        </div>
+                        <div class="sht_gnb_Menu_cart">
+                          <picture>
+                            <a href="#!">
+                              <img src="/GNB_cart2.52b2acdf.svg" alt="gnb_cart">
+                            </a>
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- WOMEN SHEET 각 영역 -->
+                <div class="Women_sheet_box sheet_box">
+                  <ul class="Women_firstBox sht_firstBox">
+                    <li><a href="#!">New & Featured</a></li>
+                    <li><a href="#!">신상품</a></li>
+                    <li><a href="#!">베스트</a></li>
+                    <li><a href="#!">스타일</a></li>
+                    <li><a href="#!">세일</a></li>
+                    <li><a href="#!">TENNIS COLLECTION</a></li>
+                    <li><a href="#!">DAILY SHOES RAYFLIDE</a></li>
+                    <li><a href="#!">FLOAT ELITE</a></li>
+                    <li><a href="#!">ONLINE EXCLUSIVE</a></li>
+                  </ul>
+
+                  <div class="women_bar_sht_1 bar_sht">
+                    <div class="bar_1"></div>
+                    <div class="bar_1"></div>
+                  </div>
+
+                  <ul class="Women_Box1 sht_box_1">
+                    <li><a href="#!">의류</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">티셔츠</a></li>
+                    <li><a href="#!">반바지</a></li>
+                    <li><a href="#!">바람막이/아노락</a></li>
+                    <li><a href="#!">트레이닝세트</a></li>
+                    <li><a href="#!">팬츠</a></li>
+                    <li><a href="#!">스커트/원피스</a></li>
+                    <li><a href="#!">브라탑/레깅스</a></li>
+                    <li><a href="#!">후드/맨투맨</a></li>
+                    <li><a href="#!">니트/스웨터</a></li>
+                  </ul>
+
+                  <ul class="Women_Box2 sht_box_2">
+                    <li><a href="#!">신발</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">샌들/슬리퍼</a></li>
+                    <li><a href="#!">라이프스타일</a></li>
+                    <li><a href="#!">헤리티지</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">러닝</a></li>
+                  </ul>
+
+                  <ul class="Women_Box3 sht_box_3">
+                    <li><a href="#!">용품</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">백팩</a></li>
+                    <li><a href="#!">메신저백</a></li>
+                    <li><a href="#!">숄더백/토트백</a></li>
+                    <li><a href="#!">모자</a></li>
+                    <li><a href="#!">양말</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">기타</a></li>
+                  </ul>
+
+                  <ul class="Women_Box4 sht_box_4">
+                    <li><a href="#!">언더웨어</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">온라인 단독</a></li>
+                    <li><a href="#!">브라</a></li>
+                    <li><a href="#!">팬티</a></li>
+                    <li><a href="#!">커플</a></li>
+                    <li><a href="#!">이너웨어</a></li>
+                    <li><a href="#!">라이프웨어</a></li>
+                  </ul>
+
+                  <div class="women_bar_sht_2 bar_sht">
+                    <div class="bar_2"></div>
+                    <div class="bar_2"></div>
+                  </div>
+
+                  <ul class="Women_LastBox sht_lastBox">
+                    <li><a href="#!">스포츠</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">러닝</a></li>
+                  </ul>
+                </div>
+
+
+                <!-- MEN SHEET 각 영역 -->
+                <div class="Men_sheet_box sheet_box">
+                  <ul class="Men_firstBox sht_firstBox">
+                    <li><a href="#!">New & Featured</a></li>
+                    <li><a href="#!">신상품</a></li>
+                    <li><a href="#!">베스트</a></li>
+                    <li><a href="#!">스타일</a></li>
+                    <li><a href="#!">세일</a></li>
+                    <li><a href="#!">TENNIS COLLECTION</a></li>
+                    <li><a href="#!">DAILY SHOES RAYFLIDE</a></li>
+                    <li><a href="#!">FLOAT ELITE</a></li>
+                    <li><a href="#!">ONLINE EXCLUSIVE</a></li>
+                  </ul>
+
+                  <div class="Men_bar_sht_1 bar_sht">
+                    <div class="bar_1"></div>
+                    <div class="bar_1"></div>
+                  </div>
+
+                  <ul class="Men_Box1 sht_box_1">
+                    <li><a href="#!">의류</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">티셔츠</a></li>
+                    <li><a href="#!">반바지</a></li>
+                    <li><a href="#!">바람막이/아노락</a></li>
+                    <li><a href="#!">트레이닝세트</a></li>
+                    <li><a href="#!">롱팬츠</a></li>
+                    <li><a href="#!">후드/맨투맨</a></li>
+                    <li><a href="#!">니트/스웨터</a></li>
+                  </ul>
+
+                  <ul class="Men_Box2 sht_box_2">
+                    <li><a href="#!">신발</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">샌들/슬리퍼</a></li>
+                    <li><a href="#!">라이프스타일</a></li>
+                    <li><a href="#!">헤리티지</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">러닝</a></li>
+                  </ul>
+
+                  <ul class="men_Box3 sht_box_3">
+                    <li><a href="#!">용품</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">백팩</a></li>
+                    <li><a href="#!">메신저백</a></li>
+                    <li><a href="#!">모자</a></li>
+                    <li><a href="#!">양말</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">기타</a></li>
+                  </ul>
+
+                  <ul class="men_Box4 sht_box_4">
+                    <li><a href="#!">언더웨어</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">멀티팩</a></li>
+                    <li><a href="#!">드로즈</a></li>
+                    <li><a href="#!">브리프</a></li>
+                    <li><a href="#!">커플</a></li>
+                    <li><a href="#!">런닝</a></li>
+                    <li><a href="#!">라이프웨어</a></li>
+                  </ul>
+
+                  <div class="Men_bar_sht_2 bar_sht">
+                    <div class="bar_2"></div>
+                    <div class="bar_2"></div>
+                  </div>
+
+                  <ul class="men_LastBox sht_lastBox">
+                    <li><a href="#!">스포츠</a></li>
+                    <li><a href="#!">테니스</a></li>
+                    <li><a href="#!">러닝</a></li>
+                  </ul>
+                </div>
+
+
+                <!-- KIDS SHEET 각 영역 -->
+                <div class="Kids_sheet_box sheet_box">
+                  <ul class="Kids_firstBox sht_firstBox">
+                    <li><a href="#!">New & Featured</a></li>
+                    <li><a href="#!">신상품</a></li>
+                    <li><a href="#!">베스트</a></li>
+                    <li><a href="#!">스타일</a></li>
+                    <li><a href="#!">세일</a></li>
+                    <li><a href="#!">SOOSOOJIN</a></li>
+                    <li><a href="#!">COMFY SANDAL</a></li>
+                  </ul>
+
+                  <div class="Kids_bar_sht_1 bar_sht">
+                    <div class="bar_1"></div>
+                    <div class="bar_1"></div>
+                  </div>
+
+                  <ul class="Kids_Box1 sht_box_1">
+                    <li><a href="#!">의류</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">상하의 셋업</a></li>
+                    <li><a href="#!">티셔츠</a></li>
+                    <li><a href="#!">숏팬츠/스커트</a></li>
+                    <li><a href="#!">원피스</a></li>
+                    <li><a href="#!">스윔웨어</a></li>
+                    <li><a href="#!">바람막이/자켓/아노락</a></li>
+                    <li><a href="#!">롱팬츠</a></li>
+                    <li><a href="#!">후드티/맨투맨</a></li>
+                    <li><a href="#!">니트/스웨터</a></li>
+                    <li><a href="#!">다운/플리스</a></li>
+                  </ul>
+
+                  <ul class="Kids_Box2 sht_box_2">
+                    <li><a href="#!">신발</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">토들러(160mm 이하)</a></li>
+                    <li><a href="#!">리틀키즈(170~210mm)</a></li>
+                    <li><a href="#!">주니어(200~240mm)</a></li>
+                    <li><a href="#!">샌들/슬라이드</a></li>
+                    <li><a href="#!">아쿠아 슈즈</a></li>
+                  </ul>
+
+                  <ul class="Kids_Box3 sht_box_3">
+                    <li><a href="#!">용품</a></li>
+                    <li><a href="/subPage.html">전체보기</a></li>
+                    <li><a href="#!">책가방</a></li>
+                    <li><a href="#!">보조가방</a></li>
+                    <li><a href="#!">모자</a></li>
+                    <li><a href="#!">양말</a></li>
+                    <li><a href="#!">워터 스포츠</a></li>
+                    <li><a href="#!">기타</a></li>
+                  </ul>
+
+                  <ul class="Kids_Box4 sht_box_4">
+                    <li></li>
+                  </ul>
+
+                  <div class="Kids_bar_sht_2 bar_sht">
+                    <div class="bar_2"></div>
+                    <div class="bar_2"></div>
+                  </div>
+
+                  <ul class="Kids_LastBox sht_lastBox">
+                    <li></li>
+                  </ul>
+                </div>
+
+
+                <div class="Brand_sheet_box sheet_box">
+                  <div class="Brand_sht_box_outer1 Brand_outer">
+                    <a class="Brand_sht_box1">
+                      <img src="/1.d757379c.jpeg" alt="">
+                      <p>About FILA</p>
+                    </a>
+                  </div>
+                  <div class="Brand_sht_box_outer2 Brand_outer">
+                    <a class="Brand_sht_box2">
+                      <img src="/2.ae18c44d.jpeg" alt="">
+                      <p>Collaboration</p>
+                    </a>
+                  </div>
+                  <div class="Brand_sht_box_outer3 Brand_outer">
+                    <a class="Brand_sht_box3">
+                      <img src="/3.e13f9f84.jpeg" alt="">
+                      <p>sustainability</p>
+                    </a>
+                  </div>
+                  <div class="Brand_sht_box_outer4 Brand_outer">
+                    <a class="Brand_sht_box4">
+                      <img src="/4.fa99568e.jpeg" alt="">
+                      <p>Athletes</p>
+                    </a>
+                  </div>
+                  <div class="Brand_sht_box_outer5 Brand_outer">
+                    <a class="Brand_sht_box5">
+                      <img src="/5.bb78e51e.jpeg" alt="">
+                      <p>Tennis Stories</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
       </div>
-      <div class="gnb">
-        <ul class="gnb_box">
-          <li class="map">
-            <a href="#!"><!--  -->
-              <img src="/GNB_map2.5d094f4f.svg" alt="MAP">
-            </a>
-          </li>
-          <li class="search">
-            <a href="#!">
-              <img src="/GNB_search2.564e62bd.svg" alt="SEARCH">
-            </a>
-          </li>
-          <li class="mypage">
-            <a href="/2_login.html">
-              <img src="/GNB_my2.5e521c69.svg" alt="MAPAGE">
-            </a>
-          </li>
-          <li class="cart">
-            <a href="#!">
-              <img src="/GNB_cart2.52b2acdf.svg" alt="CART">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="lnb">
-        <ul class="lnb_box">
-          <li><a href="#!">WOMEN</a></li>
-          <li><a href="#!">MEN</a></li>
-          <li><a href="#!">KIDS</a></li>
-          <li class="bar"></li>
-          <li><a href="#!">BRAND</a></li>
-        </ul>
-      </div>
-    </header>
+    </header> <!--  header END -->
 
 
     <div class="login_main">
@@ -191,6 +632,122 @@
       </div>
 
     </div>
+
+  
+    <section class="btn_section page">
+
+      <footer id="footer">
+        <div class="footer_box">
+          <div class="foot_top">
+            <div class="ft_log">
+              <img src="/FILA LOGO_2.7bd27530.svg" alt="">
+            </div>
+            <div class="ft_SNS">
+              <a href="#!">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#!">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#!">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#!">
+                <i class="fas fa-comment"></i>
+              </a>
+            </div>
+          </div>
+          <div class="foot_mid">
+            <div class="ft_menu">
+              <ul>
+                <li><a href="#!">WOMEN</a></li>
+                <li><a href="#!">의류</a></li>
+                <li><a href="#!">신발</a></li>
+                <li><a href="#!">용품</a></li>
+                <li><a href="#!">언더웨어</a></li>
+                <li><a href="#!">신상품</a></li>
+                <li><a href="#!">베스트</a></li>
+                <li><a href="#!">세일</a></li>
+              </ul>
+              <ul>
+                <li><a href="#!">MEN</a></li>
+                <li><a href="#!">의류</a></li>
+                <li><a href="#!">신발</a></li>
+                <li><a href="#!">용품</a></li>
+                <li><a href="#!">언더웨어</a></li>
+                <li><a href="#!">신상품</a></li>
+                <li><a href="#!">베스트</a></li>
+                <li><a href="#!">세일</a></li>
+              </ul>
+              <ul>
+                <li><a href="#!">KIDS</a></li>
+                <li><a href="#!">의류</a></li>
+                <li><a href="#!">신발</a></li>
+                <li><a href="#!">용품</a></li>
+                <li><a href="#!">신상품</a></li>
+                <li><a href="#!">베스트</a></li>
+                <li><a href="#!">세일</a></li>
+              </ul>
+              <ul>
+                <li><a href="#!">BRAND</a></li>
+                <li><a href="#!">About Fila</a></li>
+                <li><a href="#!">Collaboration</a></li>
+                <li><a href="#!">Sustainabillity</a></li>
+                <li><a href="#!">Athelets</a></li>
+                <li><a href="#!">Tennis Stories</a></li>
+              </ul>
+            </div>
+            <div class="ft_info1">
+              <div class="info_spanBox1">
+                <span><a href="#!">매장안내</a></span>
+                <span><a href="#!">공지사항</a></span>
+                <span><a href="#!">FILA MEMBERSHIP</a></span>
+                <span><a href="#!">대리점 개설문의</a></span>
+                <span><a href="#!">FILA 입찰 참여 안내</a></span>
+              </div>
+              <div class="info_spanBox2">
+                <span><a href="#!">통합회원 이용약관</a></span>
+                <span><a href="#!">개인정보처리방침</a></span>
+                <span><a href="#!">제보센터</a></span>
+                <span><a href="#!">KOREA</a></span>
+                <select name="ft_site" id="ft_site">
+                  <option value="ft_site">FAMILY SITE</option>
+                  <option value="ft_site">KEDS 온라인스토어</option>
+                  <option value="ft_site">ZOO YORK 온라인스토어</option>
+                  <option value="ft_site">FILA 입찰공고</option>
+                  <option value="ft_site">FILA Holdings</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="foot_btm">
+            <div class="ft_info2">
+              <span>서울 강동구 천호대로 1077 이스트센트럴타워 15층 ~ 18층 휠라코리아(주)</span>
+              <span>대표이사 : 김지헌</span>
+              <span>사업자등록번호 : 716-81-01573</span>
+              <span><a href="#!">[사업자정보확인]</a></span>
+              <span>통신판매업신고 : 제 2020-서울강동-0160 호</span>
+              <span>개인정보 관리책임자 : 이학우</span>
+              <span><a href="#!">[콘텐츠산업진흥법에 의한 콘텐츠 보호안내]</a></span>
+              <span>본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단 복제를 금합니다.</span>
+              <span>본 사이트는 상업적 목적이 아님을 밝힙니다.</span>
+            </div>
+            <div class="ft_CS_CENTER">
+              <div class="CS_btn">
+                <input type="button" id="pt_CSBtn">
+                <label for="pt_CSBtn">CS CENTER</label>
+              </div>
+              <h1>1577-3472</h1>
+              <h1>filaonline@fila.com</h1>
+              <p>평일 월~금 : 09시 ~ 18시<br> (공휴일 제외)</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+    </section>
+
+
 
   </div>
 </body>
