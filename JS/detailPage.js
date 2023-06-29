@@ -120,58 +120,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  // QuickMenu ---------------------------
-
-  const QuickMenu = document.getElementById('QuickMenu')
-  const QTxt = document.querySelectorAll('.Q_txt')
-  const QuickMenuUpDown = document.querySelector('.QuickMenu_UP_Down')
 
 
 
-  // 퀵메뉴 마우스 오버
-  QuickMenu.addEventListener('mouseover', function() {
-    QuickMenu.style.width = '150px'
-    QuickMenuUpDown.style.width = '150px'
-    QuickMenu.style.transition = '0.3s'
+// ===========================================
+// ** QuickMenu Content  **
+// ===========================================
 
-    QTxt.forEach((element) => {
-      element.style.width = '100px'
-      element.style.opacity = '1'
-    })
+
+const QuickMenu = document.getElementById('QuickMenu')
+const QTxt = document.querySelectorAll('.Q_txt')
+const QuickMenuUpDown = document.querySelector('.QuickMenu_UP_Down')
+
+
+
+// 퀵메뉴 마우스 오버
+QuickMenu.addEventListener('mouseover', function() {
+  QuickMenu.style.width = '150px'
+  QuickMenuUpDown.style.width = '150px'
+  QuickMenu.style.transition = '0.3s'
+
+  QTxt.forEach((element) => {
+    element.style.width = '100px'
+    element.style.opacity = '1'
   })
+})
 
-  QuickMenu.addEventListener('mouseout', function() {
-    QuickMenu.style.width = '50px'
-    QuickMenuUpDown.style.width = '50px'
-    QuickMenu.style.transition = '0.3s'
+QuickMenu.addEventListener('mouseout', function() {
+  QuickMenu.style.width = '50px'
+  QuickMenuUpDown.style.width = '50px'
+  QuickMenu.style.transition = '0.3s'
 
-    QTxt.forEach((element) => {
-      element.style.width = '0px'
-      element.style.opacity = '0'
-    })
+  QTxt.forEach((element) => {
+    element.style.width = '0px'
+    element.style.opacity = '0'
   })
+})
 
 
 
-  // 퀵메뉴 Up,Down 메뉴 마우스 오버
-  QuickMenuUpDown.addEventListener('mouseover', function() {
-    QuickMenu.style.height = '300px'
-    QuickMenuUpDown.style.width = '150px'
-    QuickMenuUpDown.style.height = '100px'
-    QuickMenuUpDown.style.lineHeight = '50px'
-    QuickMenuUpDown.style.fontSize = '32px'
-    QuickMenuUpDown.style.transition = '0.3s'
-    QuickMenuUpDown.style.color = '#000'
-  })
+// 퀵메뉴 Up,Down 메뉴 마우스 오버
+QuickMenuUpDown.addEventListener('mouseover', function() {
+  QuickMenu.style.height = '300px'
+  QuickMenuUpDown.style.width = '150px'
+  QuickMenuUpDown.style.height = '100px'
+  QuickMenuUpDown.style.lineHeight = '50px'
+  QuickMenuUpDown.style.fontSize = '32px'
+  QuickMenuUpDown.style.transition = '0.3s'
+  QuickMenuUpDown.style.Color = '#000'
+})
+QuickMenuUpDown.addEventListener('mouseout', function() {
+  QuickMenu.style.height = '250px'
+  QuickMenuUpDown.style.height = '50px'
+  QuickMenuUpDown.style.lineHeight = '20px'
+  QuickMenuUpDown.style.fontSize = '18px'
+  QuickMenuUpDown.style.Color = '#777'
+  QuickMenuUpDown.style.transition = '0.3s'
+})
 
-  QuickMenuUpDown.addEventListener('mouseout', function() {
-    QuickMenu.style.height = '250px'
-    QuickMenuUpDown.style.height = '50px'
-    QuickMenuUpDown.style.lineHeight = '20px'
-    QuickMenuUpDown.style.fontSize = '18px'
-    QuickMenuUpDown.style.color = '#777'
-    QuickMenuUpDown.style.transition = '0.3s'
-  })
+
+$(function() {
+  const QuickUpA = $('.Up_btn a');
+
+  QuickUpA.click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeOutQuint');
+  });
+});
+
+
+$(function() {
+  const QuickUpA = $('.Down_btn a');
+
+  QuickUpA.click(function(event) {
+    event.preventDefault();
+    const scrollBottom = $(document).height() - $(window).height();
+    $('html, body').animate({ scrollTop: scrollBottom }, 1500, 'easeOutQuint');
+  });
+});
+  
 
 
 

@@ -2,6 +2,68 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
+
+
+
+
+
+
+
+  window.onload = function () {
+    $("section").each(function () {
+        $(this).on("mousewheel DOMMouseScroll", function (e) {
+            e.preventDefault()
+            var delta = 0
+            if (!event) event = window.event;
+            if (event.wheelDelta) {
+                delta = event.wheelDelta / 120
+                if (window.opera) delta = -delta
+            } else if (event.detail) delta = -event.detail / 3
+            var moveTop = null
+
+
+            // 마우스휠을 위에서 아래로
+            if (delta < 0) {
+                if ($(this).next() != undefined) {
+                    moveTop = $(this).next().offset().top
+                }
+
+
+            // 마우스휠을 아래에서 위로
+            } else {
+                if ($(this).prev() != undefined) {
+                    moveTop = $(this).prev().offset().top
+                }
+            }
+
+
+            // 화면 이동 0.8초(800)
+            $("html,body").stop().animate({
+                scrollTop: moveTop + 'px'
+            }, {
+                duration: 800, complete: function () {
+                }
+            })
+        })
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//===========================================
+// ** Popup Content  **
+// ===========================================
+
+
   
       const popUp = document.querySelector('.pop_up')
       const popChk = document.getElementById('pop_close')
@@ -73,8 +135,25 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
 
+  $(function() {
+    const QuickUpA = $('.Up_btn a');
+  
+    QuickUpA.click(function(event) {
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 1500, 'easeOutQuint');
+    });
+  });
 
 
+  $(function() {
+    const QuickUpA = $('.Down_btn a');
+  
+    QuickUpA.click(function(event) {
+      event.preventDefault();
+      const scrollBottom = $(document).height() - $(window).height();
+      $('html, body').animate({ scrollTop: scrollBottom }, 1500, 'easeOutQuint');
+    });
+  });
 
 
 // ===========================================
@@ -280,15 +359,15 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 10,
       centeredSlides: true,
 
-      pagination: {
-        el: ".NewArrival_Swiper1 .swiper-pagination",
-        clickable: true,
-      },
+      // pagination: {
+      //   el: ".NewArrival_Swiper1 .swiper-pagination",
+      //   clickable: true,
+      // },
 
-      navigation: {
-        nextEl: ".NewArrival_Swiper1 .swiper-button-next",
-        prevEl: ".NewArrival_Swiper1 .swiper-button-prev",
-      },
+      // navigation: {
+      //   nextEl: ".NewArrival_Swiper1 .swiper-button-next",
+      //   prevEl: ".NewArrival_Swiper1 .swiper-button-prev",
+      // },
     });
   }
   NewArrivalSWP1();
@@ -600,6 +679,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 // ===========================================
 // ** Recommend Content Swiper **
 // ===========================================
@@ -680,24 +761,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let hoverOn = 0;
-
-  // PlusHOVER.forEach((element, index) => {
-  //   element.addEventListener('click', () => {
-  //     if (hoverOn === 0) {
-  //       PlusTextHOVER[index].style.display = 'block';
-  //       hoverOn = 1
-  //     }
-  //   })
-  // })
-  // PlusTextHOVER.forEach((element, index) => {
-  //   element.addEventListener('mouseleave', () => {
-  //     // if (hoverOn === 1) {
-  //       if (hoverOn === 1 && !PlusHOVER[index].matches(':hover')) {
-  //       PlusTextHOVER[index].style.display = 'none';
-  //       hoverOn = 0
-  //     }
-  //   })
-  // })
 
   let OnPlusTextHOVER = false;
   let timeout;
@@ -1024,6 +1087,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // =================
+
+
+
+
 
 
 

@@ -4,12 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./jquery-3.6.4.min.js.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
   <link rel="shortcut icon" href="./images/FILA_favicon2.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- 메인 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" ></script>
+
+
+
+    <!-- 플러그인 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" ></script>
 
   <script src="./JS/main.js"></script>
   <!-- <link rel="stylesheet" href="./CSS/main.scss"> -->
@@ -93,14 +102,14 @@
         <div class="QuickMenu_UP_Down Q_menu">
           <div class="QuickUp">
             <div class="Up_btn">
-              <a href="#header">
+              <a href="#!">
                 <i class="fas fa-angle-double-up"></i>
               </a>
             </div>
           </div>
           <div class="QuickDown">
             <div class="Down_btn">
-              <a href="#footer">
+              <a href="#!">
                 <i class="fas fa-angle-double-down"></i>
               </a>
             </div>
@@ -740,6 +749,8 @@
 
     
     <section class="slide_sub_img page">
+      <div class="slide_sub_cover1"></div>
+      <div class="slide_sub_cover2"></div>
       <div class="slide_sub_img_box">
         <img src="./images/FILA LOGO_1.svg" alt="">
       </div>
@@ -945,11 +956,6 @@
             </div>
           </div>
 
-
-
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
 
 
@@ -1522,7 +1528,7 @@
 
         <div class="swiper Magazine_Swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide Maga_Slide1">
               <img src="./images/starter-for-tennis_30.jpeg" alt="">
               <div class="Magazine_blur1">
                 <div class="Magazine_txt">
@@ -1535,7 +1541,8 @@
               </div>
 
             </div>
-            <div class="swiper-slide">
+
+            <div class="swiper-slide Maga_Slide2">
               <img src="./images/img_M_top_summershoes_230517_31.jpeg" alt="">
               <div class="Magazine_blur2">
                 <div class="Magazine_txt">
@@ -1547,7 +1554,8 @@
                 </a>
               </div>
             </div>
-            <div class="swiper-slide">
+
+            <div class="swiper-slide Maga_Slide3">
               <img src="./images/img_M_top_pantscollection_d_230404_20.jpeg" alt="">
               <div class="Magazine_blur3">
                 <div class="Magazine_txt">
@@ -1559,7 +1567,8 @@
                 </a>
               </div>
             </div>
-            <div class="swiper-slide">
+
+            <div class="swiper-slide Maga_Slide4">
               <img src="./images/img_M_top_og_d_230227_50.jpeg" alt="">
               <div class="Magazine_blur4">
                 <div class="Magazine_txt">
@@ -1571,7 +1580,8 @@
                 </a>
               </div>
             </div>
-            <div class="swiper-slide">
+
+            <div class="swiper-slide Maga_Slide5">
               <img src="./images/img_M_top_og_d_230217_32.jpeg" alt="">
               <div class="Magazine_blur5">
                 <div class="Magazine_txt">
@@ -2398,11 +2408,6 @@
     </section> <!-- recommend END -->
 
 
-  </div> <!-- warp END -->
-
-
-  
-
     <section class="btn_section page">
       <div class="SNS_box">
         <div class="SNS_title">
@@ -2568,6 +2573,10 @@
 
     </section>
 
+  </div> <!-- warp END -->
+
+  <script src="./jquery-3.6.4.min.js"></script>
+  <script src="./jquery.easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 </html>
