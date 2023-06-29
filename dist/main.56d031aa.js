@@ -119,6 +119,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"JS/main.js":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", function () {
+  //===========================================
+  // ** Popup Content  **
+  // ===========================================
+
   var popUp = document.querySelector('.pop_up');
   var popChk = document.getElementById('pop_close');
   popChk.addEventListener('click', function () {
@@ -336,17 +340,20 @@ document.addEventListener("DOMContentLoaded", function () {
       loopAdditionalSlides: 1,
       slidesPerView: 3,
       spaceBetween: 10,
-      centeredSlides: true,
-      pagination: {
-        el: ".NewArrival_Swiper1 .swiper-pagination",
-        clickable: true
-      },
-      navigation: {
-        nextEl: ".NewArrival_Swiper1 .swiper-button-next",
-        prevEl: ".NewArrival_Swiper1 .swiper-button-prev"
-      }
+      centeredSlides: true
+
+      // pagination: {
+      //   el: ".NewArrival_Swiper1 .swiper-pagination",
+      //   clickable: true,
+      // },
+
+      // navigation: {
+      //   nextEl: ".NewArrival_Swiper1 .swiper-button-next",
+      //   prevEl: ".NewArrival_Swiper1 .swiper-button-prev",
+      // },
     });
   }
+
   NewArrivalSWP1();
   function NewArrivalSWP2() {
     var swiper = new Swiper(".NewArrival_Swiper2", {
@@ -548,25 +555,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var PlusHOVER = [document.querySelector(".recommend_plus1"), document.querySelector(".recommend_plus2"), document.querySelector(".recommend_plus3"), document.querySelector(".recommend_plus4"), document.querySelector(".recommend_plus5"), document.querySelector(".recommend_plus6"), document.querySelector(".recommend_plus7"), document.querySelector(".recommend_plus8"), document.querySelector(".recommend_plus9"), document.querySelector(".recommend_plus10"), document.querySelector(".recommend_plus11"), document.querySelector(".recommend_plus12"), document.querySelector(".recommend_plus13"), document.querySelector(".recommend_plus14"), document.querySelector(".recommend_plus15"), document.querySelector(".recommend_plus16"), document.querySelector(".recommend_plus17"), document.querySelector(".recommend_plus18"), document.querySelector(".recommend_plus19"), document.querySelector(".recommend_plus20"), document.querySelector(".recommend_plus21"), document.querySelector(".recommend_plus22"), document.querySelector(".recommend_plus23"), document.querySelector(".recommend_plus24"), document.querySelector(".recommend_plus25")];
   var PlusTextHOVER = [document.querySelector(".recommend_txt1"), document.querySelector(".recommend_txt2"), document.querySelector(".recommend_txt3"), document.querySelector(".recommend_txt4"), document.querySelector(".recommend_txt5"), document.querySelector(".recommend_txt6"), document.querySelector(".recommend_txt7"), document.querySelector(".recommend_txt8"), document.querySelector(".recommend_txt9"), document.querySelector(".recommend_txt10"), document.querySelector(".recommend_txt11"), document.querySelector(".recommend_txt12"), document.querySelector(".recommend_txt13"), document.querySelector(".recommend_txt14"), document.querySelector(".recommend_txt15"), document.querySelector(".recommend_txt16"), document.querySelector(".recommend_txt17"), document.querySelector(".recommend_txt18"), document.querySelector(".recommend_txt19"), document.querySelector(".recommend_txt20"), document.querySelector(".recommend_txt21"), document.querySelector(".recommend_txt22"), document.querySelector(".recommend_txt23"), document.querySelector(".recommend_txt24"), document.querySelector(".recommend_txt25")];
   var hoverOn = 0;
-
-  // PlusHOVER.forEach((element, index) => {
-  //   element.addEventListener('click', () => {
-  //     if (hoverOn === 0) {
-  //       PlusTextHOVER[index].style.display = 'block';
-  //       hoverOn = 1
-  //     }
-  //   })
-  // })
-  // PlusTextHOVER.forEach((element, index) => {
-  //   element.addEventListener('mouseleave', () => {
-  //     // if (hoverOn === 1) {
-  //       if (hoverOn === 1 && !PlusHOVER[index].matches(':hover')) {
-  //       PlusTextHOVER[index].style.display = 'none';
-  //       hoverOn = 0
-  //     }
-  //   })
-  // })
-
   var OnPlusTextHOVER = false;
   var timeout;
   PlusHOVER.forEach(function (element, index) {
@@ -778,6 +766,65 @@ document.addEventListener("DOMContentLoaded", function () {
   RankingSWP1();
 
   // =================
+
+  var imgElement = document.querySelector('.recommend_box img'); // 첫 번째 <img> 태그 선택
+  var imgSrc = imgElement.getAttribute('src'); // <img> 태그의 src 속성 값 가져오기
+  console.log(imgSrc); // 콘솔에 src 속성 값 출력
+
+  $(function () {
+    var QuickUpA = $('.Up_btn a');
+    QuickUpA.click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: 0
+      }, 1500, 'easeOutQuint');
+    });
+  });
+  $(function () {
+    var QuickUpA = $('.Down_btn a');
+    QuickUpA.click(function (event) {
+      event.preventDefault();
+      var scrollBottom = $(document).height() - $(window).height();
+      $('html, body').animate({
+        scrollTop: scrollBottom
+      }, 1500, 'easeOutQuint');
+    });
+  });
+  window.onload = function () {
+    $("section").each(function () {
+      $(this).on("mousewheel DOMMouseScroll", function (e) {
+        e.preventDefault();
+        var delta = 0;
+        if (!event) event = window.event;
+        if (event.wheelDelta) {
+          delta = event.wheelDelta / 120;
+          if (window.opera) delta = -delta;
+        } else if (event.detail) delta = -event.detail / 3;
+        var moveTop = null;
+
+        // 마우스휠을 위에서 아래로
+        if (delta < 0) {
+          if ($(this).next() != undefined) {
+            moveTop = $(this).next().offset().top;
+          }
+
+          // 마우스휠을 아래에서 위로
+        } else {
+          if ($(this).prev() != undefined) {
+            moveTop = $(this).prev().offset().top;
+          }
+        }
+
+        // 화면 이동 0.8초(800)
+        $("html,body").stop().animate({
+          scrollTop: moveTop + 'px'
+        }, {
+          duration: 800,
+          complete: function complete() {}
+        });
+      });
+    });
+  };
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -804,7 +851,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57926" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63296" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

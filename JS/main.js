@@ -9,53 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  window.onload = function () {
-    $("section").each(function () {
-        $(this).on("mousewheel DOMMouseScroll", function (e) {
-            e.preventDefault()
-            var delta = 0
-            if (!event) event = window.event;
-            if (event.wheelDelta) {
-                delta = event.wheelDelta / 120
-                if (window.opera) delta = -delta
-            } else if (event.detail) delta = -event.detail / 3
-            var moveTop = null
-
-
-            // 마우스휠을 위에서 아래로
-            if (delta < 0) {
-                if ($(this).next() != undefined) {
-                    moveTop = $(this).next().offset().top
-                }
-
-
-            // 마우스휠을 아래에서 위로
-            } else {
-                if ($(this).prev() != undefined) {
-                    moveTop = $(this).prev().offset().top
-                }
-            }
-
-
-            // 화면 이동 0.8초(800)
-            $("html,body").stop().animate({
-                scrollTop: moveTop + 'px'
-            }, {
-                duration: 800, complete: function () {
-                }
-            })
-        })
-    })
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -135,25 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
 
-  $(function() {
-    const QuickUpA = $('.Up_btn a');
-  
-    QuickUpA.click(function(event) {
-      event.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, 1500, 'easeOutQuint');
-    });
-  });
-
-
-  $(function() {
-    const QuickUpA = $('.Down_btn a');
-  
-    QuickUpA.click(function(event) {
-      event.preventDefault();
-      const scrollBottom = $(document).height() - $(window).height();
-      $('html, body').animate({ scrollTop: scrollBottom }, 1500, 'easeOutQuint');
-    });
-  });
 
 
 // ===========================================
@@ -1095,6 +1029,81 @@ document.addEventListener("DOMContentLoaded", function () {
 const imgElement = document.querySelector('.recommend_box img'); // 첫 번째 <img> 태그 선택
 const imgSrc = imgElement.getAttribute('src'); // <img> 태그의 src 속성 값 가져오기
 console.log(imgSrc); // 콘솔에 src 속성 값 출력
+
+
+
+
+
+$(function() {
+  const QuickUpA = $('.Up_btn a');
+
+  QuickUpA.click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeOutQuint');
+  });
+});
+
+
+$(function() {
+  const QuickUpA = $('.Down_btn a');
+
+  QuickUpA.click(function(event) {
+    event.preventDefault();
+    const scrollBottom = $(document).height() - $(window).height();
+    $('html, body').animate({ scrollTop: scrollBottom }, 1500, 'easeOutQuint');
+  });
+});
+
+
+
+
+
+window.onload = function () {
+  $("section").each(function () {
+      $(this).on("mousewheel DOMMouseScroll", function (e) {
+          e.preventDefault()
+          var delta = 0
+          if (!event) event = window.event;
+          if (event.wheelDelta) {
+              delta = event.wheelDelta / 120
+              if (window.opera) delta = -delta
+          } else if (event.detail) delta = -event.detail / 3
+          var moveTop = null
+
+
+          // 마우스휠을 위에서 아래로
+          if (delta < 0) {
+              if ($(this).next() != undefined) {
+                  moveTop = $(this).next().offset().top
+              }
+
+
+          // 마우스휠을 아래에서 위로
+          } else {
+              if ($(this).prev() != undefined) {
+                  moveTop = $(this).prev().offset().top
+              }
+          }
+
+
+          // 화면 이동 0.8초(800)
+          $("html,body").stop().animate({
+              scrollTop: moveTop + 'px'
+          }, {
+              duration: 800, complete: function () {
+              }
+          })
+      })
+  })
+}
+
+
+
+
+
+
+
+
 
 
 

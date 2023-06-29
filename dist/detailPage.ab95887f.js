@@ -216,7 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // QuickMenu ---------------------------
+  // ===========================================
+  // ** QuickMenu Content  **
+  // ===========================================
 
   var QuickMenu = document.getElementById('QuickMenu');
   var QTxt = document.querySelectorAll('.Q_txt');
@@ -250,15 +252,34 @@ document.addEventListener("DOMContentLoaded", function () {
     QuickMenuUpDown.style.lineHeight = '50px';
     QuickMenuUpDown.style.fontSize = '32px';
     QuickMenuUpDown.style.transition = '0.3s';
-    QuickMenuUpDown.style.color = '#000';
+    QuickMenuUpDown.style.Color = '#000';
   });
   QuickMenuUpDown.addEventListener('mouseout', function () {
     QuickMenu.style.height = '250px';
     QuickMenuUpDown.style.height = '50px';
     QuickMenuUpDown.style.lineHeight = '20px';
     QuickMenuUpDown.style.fontSize = '18px';
-    QuickMenuUpDown.style.color = '#777';
+    QuickMenuUpDown.style.Color = '#777';
     QuickMenuUpDown.style.transition = '0.3s';
+  });
+  $(function () {
+    var QuickUpA = $('.Up_btn a');
+    QuickUpA.click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: 0
+      }, 1500, 'easeOutQuint');
+    });
+  });
+  $(function () {
+    var QuickUpA = $('.Down_btn a');
+    QuickUpA.click(function (event) {
+      event.preventDefault();
+      var scrollBottom = $(document).height() - $(window).height();
+      $('html, body').animate({
+        scrollTop: scrollBottom
+      }, 1500, 'easeOutQuint');
+    });
   });
 
   // -------------------------------------------
@@ -760,7 +781,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57926" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63296" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
