@@ -1092,6 +1092,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+const imgElement = document.querySelector('.recommend_box img'); // 첫 번째 <img> 태그 선택
+const imgSrc = imgElement.getAttribute('src'); // <img> 태그의 src 속성 값 가져오기
+console.log(imgSrc); // 콘솔에 src 속성 값 출력
+
 
 
 
