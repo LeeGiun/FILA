@@ -282,11 +282,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // ** Visual main Content Swiper  **
   // ===========================================
 
-  /*   const VisualSwiper = document.getElementById('visual_main_swiper') */
-
   function VisualSWP() {
     var swiper = new Swiper(".swiper_visual", {
-      // Optional parameters
       loop: true,
       autoplay: {
         delay: 3000,
@@ -300,12 +297,10 @@ document.addEventListener("DOMContentLoaded", function () {
         el: ".swiper_visual .swiper-pagination",
         type: "fraction"
       },
-      // Navigation arrows
       navigation: {
         nextEl: ".swiper_visual .swiper-button-next",
         prevEl: ".swiper_visual .swiper-button-prev"
       },
-      // And if we need scrollbar
       scrollbar: {
         el: ".swiper_visual .swiper-scrollbar"
       }
@@ -341,19 +336,8 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 3,
       spaceBetween: 10,
       centeredSlides: true
-
-      // pagination: {
-      //   el: ".NewArrival_Swiper1 .swiper-pagination",
-      //   clickable: true,
-      // },
-
-      // navigation: {
-      //   nextEl: ".NewArrival_Swiper1 .swiper-button-next",
-      //   prevEl: ".NewArrival_Swiper1 .swiper-button-prev",
-      // },
     });
   }
-
   NewArrivalSWP1();
   function NewArrivalSWP2() {
     var swiper = new Swiper(".NewArrival_Swiper2", {
@@ -699,26 +683,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ==================================
 
-  /* 
-    const text5_1 = [
-      "1. 휠라 스피드서브 T9 화이트 라인",
-      "2. 휠라 스피드서브 T9",
-      "3. 휠라 스피드서브 T9 US",
-      "4. 휠라 엑실러스 2 T9 RG",
-      "5. 테니스 라이프 컴포트핏 니트 카라티셔츠",
-      "6. 테니스 라이프 티핑 크롭 니트 카라티셔츠",
-    ]
-  
-    const text6_1 = [
-      "1. 휠라 RGB 플렉스 2.0 (100)",
-      "2. 휠라 RGB 플렉스 2.0 (923)",
-      "3. 휠라 RGB 플렉스 2.0 (155)",
-      "4. 휠라 RGB 피어 2.0 (001)",
-      "5. 휠라 RGB 피어 2.0 (920)",
-      "6. 휠라 RGB 피어 2.0 (100)",
-    ]
-   */
-
   var Swiper1 = document.querySelector('.swiper_Ranking1');
   var Swiper2 = document.querySelector('.swiper_Ranking2');
   var Swiper3 = document.querySelector('.swiper_Ranking3');
@@ -851,7 +815,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63296" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13186" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===========================================
 
 
-  
+
       const popUp = document.querySelector('.pop_up')
       const popChk = document.getElementById('pop_close')
 
@@ -216,11 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // ** Visual main Content Swiper  **
 // ===========================================
 
-  /*   const VisualSwiper = document.getElementById('visual_main_swiper') */
-
   function VisualSWP() {
     let swiper = new Swiper(".swiper_visual", {
-      // Optional parameters
       loop: true,
 
       autoplay: {
@@ -238,13 +235,11 @@ document.addEventListener("DOMContentLoaded", function () {
         type: "fraction",
       },
 
-      // Navigation arrows
       navigation: {
         nextEl: ".swiper_visual .swiper-button-next",
         prevEl: ".swiper_visual .swiper-button-prev",
       },
 
-      // And if we need scrollbar
       scrollbar: {
         el: ".swiper_visual .swiper-scrollbar",
       },
@@ -293,15 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 10,
       centeredSlides: true,
 
-      // pagination: {
-      //   el: ".NewArrival_Swiper1 .swiper-pagination",
-      //   clickable: true,
-      // },
-
-      // navigation: {
-      //   nextEl: ".NewArrival_Swiper1 .swiper-button-next",
-      //   prevEl: ".NewArrival_Swiper1 .swiper-button-prev",
-      // },
     });
   }
   NewArrivalSWP1();
@@ -934,25 +920,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ==================================
 
-/* 
-  const text5_1 = [
-    "1. 휠라 스피드서브 T9 화이트 라인",
-    "2. 휠라 스피드서브 T9",
-    "3. 휠라 스피드서브 T9 US",
-    "4. 휠라 엑실러스 2 T9 RG",
-    "5. 테니스 라이프 컴포트핏 니트 카라티셔츠",
-    "6. 테니스 라이프 티핑 크롭 니트 카라티셔츠",
-  ]
-
-  const text6_1 = [
-    "1. 휠라 RGB 플렉스 2.0 (100)",
-    "2. 휠라 RGB 플렉스 2.0 (923)",
-    "3. 휠라 RGB 플렉스 2.0 (155)",
-    "4. 휠라 RGB 피어 2.0 (001)",
-    "5. 휠라 RGB 피어 2.0 (920)",
-    "6. 휠라 RGB 피어 2.0 (100)",
-  ]
- */
 
 
   const Swiper1 = document.querySelector('.swiper_Ranking1')
@@ -979,8 +946,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function RankingSWP1() {
 
-  
-  
     let swiper = new Swiper(".swiper_Ranking1", {
       slidesPerView: 3,
       spaceBetween: 30,
@@ -1004,19 +969,15 @@ document.addEventListener("DOMContentLoaded", function () {
         renderBullet: function (index, className) {
           return '<div class="' + className + '"><span>' + (custom_bullet1[index]) + '</span></div>';
         },
-        
-  
       },
   
       navigation: {
         nextEl: ".swiper_Ranking1 .swiper-button-next",
         prevEl: ".swiper_Ranking1 .swiper-button-prev",
       },
-  
     });
 
   }
-  
   RankingSWP1();
 
 

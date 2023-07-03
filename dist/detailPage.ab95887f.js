@@ -378,8 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var imageUrl = "../CSS/BACK_IMG/detail".concat(index + 1, ".jpeg");
       console.log(imageUrl);
       DetailThumbIMG.style.backgroundImage = "url(./BACK_IMG/detail".concat(index + 1, ".jpeg)");
-      // DetailThumbIMG.style.backgroundImage = `url(../CSS/BACK_IMG/detail${index + 1}.jpeg)`
-    }); // Git에 올릴때는 아래 // parcel-bundler로 할때는 위 사용
+    });
   });
 
   // -------------------------------------------
@@ -649,12 +648,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
-    function press(TextKey) {
-      if (TextKey.keyCode == 13) {
-        var formname = document.querySelector('form');
-        formname.submit();
-      }
-    }
+
+    // function press(TextKey) {
+    //   if (TextKey.keyCode == 13) {
+    //     const formname = document.querySelector('form');
+    //     formname.submit();
+    //   }
+    // }
   });
 
   // 리뷰 이벤트 등록하기 클릭 후 스타일 초기화
@@ -781,7 +781,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63296" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13186" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

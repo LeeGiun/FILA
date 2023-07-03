@@ -325,8 +325,7 @@ ColorSelectAll.forEach(label => {
       const imageUrl = `../CSS/BACK_IMG/detail${index + 1}.jpeg`;
       console.log(imageUrl);
       DetailThumbIMG.style.backgroundImage = `url(./BACK_IMG/detail${index + 1}.jpeg)`
-      // DetailThumbIMG.style.backgroundImage = `url(../CSS/BACK_IMG/detail${index + 1}.jpeg)`
-    }) // Git에 올릴때는 아래 // parcel-bundler로 할때는 위 사용
+    })
   })
 
 
@@ -508,26 +507,20 @@ ColorSelectAll.forEach(label => {
 
   /* 리뷰 등록하기 버튼 */
   const AddReview = document.querySelector('.add_ReviewBox label')
-
   const closeBtn = document.querySelector('.close_ReviewBox label')
-
 
   ReviewBtn.addEventListener('click', function () {
     ReviewWrite.style.display = 'block'
   })
-
   closeBtn.addEventListener('click', function () {
     ReviewWrite.style.display = 'none'
   })
-
   AddReview.addEventListener('click', function () {
     ReviewWrite.style.display = 'none'
   })
 
-
 // 리뷰 등록하기 << 버튼 누를경우 클릭 이벤트
   AddReview.addEventListener('click', function () {
-
 
     const RVwrite = document.querySelector('.RVwrite')
     const ReviewBtnContent = document.querySelector('.Review_Buttom_content')
@@ -570,7 +563,7 @@ ColorSelectAll.forEach(label => {
     }
     
     
-    
+
     let Create_P2 = document.createElement('p')
     let starTextNode1 = document.createTextNode(starResult)
     Create_P2.appendChild(starTextNode1)
@@ -619,7 +612,6 @@ ColorSelectAll.forEach(label => {
     Create_div2.appendChild(Create_P3)
     
     
-    
     // 닉네임 이벤트
     let Create_div3 = document.createElement('div')
     Create_div3.setAttribute('class', 'Review_btm_txtBox3')
@@ -635,13 +627,8 @@ ColorSelectAll.forEach(label => {
     
 
 
-
-
     let Create_div4 = document.createElement('div')
     Create_div4.setAttribute('class', 'Review_btm_txtBox4')
-
-
-
 
 
     Create_divBox.appendChild(Create_div1)
@@ -670,14 +657,6 @@ ColorSelectAll.forEach(label => {
     // Create_div3 >
     //  Create_P > Create_Text
     //  Create_P > Create_Span > CloseText
-
-
-
-
-
-
-
-
 
 
     // 클릭 후 체크 초기화
@@ -714,12 +693,12 @@ ColorSelectAll.forEach(label => {
       })
     }
 
-    function press(TextKey) {
-      if (TextKey.keyCode == 13) {
-        const formname = document.querySelector('form');
-        formname.submit();
-      }
-    }
+    // function press(TextKey) {
+    //   if (TextKey.keyCode == 13) {
+    //     const formname = document.querySelector('form');
+    //     formname.submit();
+    //   }
+    // }
 
   })
 
