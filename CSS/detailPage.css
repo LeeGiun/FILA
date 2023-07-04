@@ -475,6 +475,7 @@ a {
   height: 500px;
   padding: 10px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .Brand_sheet_box .Brand_outer a {
   display: block;
