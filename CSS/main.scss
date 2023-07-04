@@ -831,7 +831,8 @@ $TitFont : 32px;
       }
 
       // Ranking TAP
-      .Ranking_Tap {
+      .Ranking_Tap,
+      .NewSlideTap ul {
         width: 900px;
         height: 50px;
         line-height: 50px;
@@ -1093,19 +1094,21 @@ $TitFont : 32px;
       }
 
       ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 1660px;
-        height: 80px;
+        width: 900px;
+        height: 50px;
+        line-height: 50px;
         margin: 0 auto;
-        border-radius: 5px;
-        box-shadow: 0px 0px 15px #000;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        box-shadow: 3px 3px 10px #777;
+        border-radius: 10px;
+        box-sizing: border-box;
 
         li {
           margin: 0px 40px;
           height: 40px;
-          line-height: 40px;
+          line-height: 50px;
           a {
             color: #777;
             display: block;
@@ -1113,6 +1116,7 @@ $TitFont : 32px;
             div {
               width: 0%;
               margin: 0 auto;
+              margin-top: -10px;
               border-bottom: 3px solid #000;
             }
           }
@@ -1127,7 +1131,8 @@ $TitFont : 32px;
           color: $PointColor;
 
           div {
-            width: 100%;
+            margin-top: -10px;
+            width: 101%;
             border-bottom: 3px solid $PointColor;
             transition: 0.3s;
           }
@@ -1412,6 +1417,27 @@ $TitFont : 32px;
 
 
 // magaZine ------------------------
+.magaZine, 
+.recommend {
+  h4 {
+    z-index: 10;
+    position: absolute;
+    right: 80px;
+    top: 80px;
+    font-size: 28px;
+    animation: 1.5s ease 0s infinite normal none running ScrollAni;
+  }
+  
+  @keyframes ScrollAni {
+    0% {right: 80px; opacity: 1;}
+    50% {right: 100px; opacity: 0.2;}
+    100% {right: 80px; opacity: 1;}
+  }
+
+}
+
+
+
 .magaZine {
   font-size: 70px;
   font-weight: bold;
@@ -1425,6 +1451,7 @@ $TitFont : 32px;
     margin: 0 auto;
     line-height: 22vh;
   }
+  
 
   .magaZine_box {
     width: 1660px;
@@ -2111,6 +2138,44 @@ $TitFont : 32px;
       }
     }
     }
+
+  .SNS_box {
+    .SnsSwiper {
+      .SNS_custom_bullet:nth-child(1) {
+        position: absolute;
+        top: 0px;
+        right: 13px;
+        height: 50%;
+        font-size: 38px;
+        box-sizing: border-box;
+        display: block;
+        cursor: pointer;
+        padding: 30px 0px;
+        animation: 1s ease 0s infinite normal none running SNS_SwiperAniTop;
+      }
+      .SNS_custom_bullet:nth-child(2) {
+        position: absolute;
+        top: 130px !important;
+        right: 13px;
+        height: 50%;
+        font-size: 38px;
+        box-sizing: border-box;
+        display: block;
+        cursor: pointer;
+        padding: 30px 0px;
+        animation: 1s ease 0s infinite normal none running SNS_SwiperAniTop;
+      }
+      @keyframes SNS_SwiperAniTop {
+        0% {opacity: 1;}
+        50% {opacity: 0.2;}
+        100% {opacity: 1;}
+      }
+    }
+  }
+
+
+
+
   /* footer ============ */
   #footer {
     display: flex;
