@@ -248,8 +248,6 @@
     ChkBox2.addEventListener('click', BoxChk)
     ChkBox3.addEventListener('click', BoxChk)
     ChkBox4.addEventListener('click', BoxChk)
-    /*     ChkBoxSMS.addEventListener('click', BoxChk)
-        ChkBoxEmail.addEventListener('click', BoxChk) */
 
     function TotalChk() {
       if (AllChk.checked) {
@@ -264,7 +262,7 @@
     }
 
     function BoxChk() {
-      if (ChkBox1.checked && ChkBox2.checked && ChkBox3.checked && ChkBox4.checked /* && ChkBoxSMS.checked && ChkBoxEmail.checked */) {
+      if (ChkBox1.checked && ChkBox2.checked && ChkBox3.checked && ChkBox4.checked) {
         AllChk.checked = true
       } else {
         AllChk.checked = false
@@ -557,7 +555,7 @@
                 </div>
                 <div class="gnb_Menu_my">
                   <picture>
-                    <a href="#!">
+                    <a href="./2_login.html">
                       <img src="./images/GNB_my2.svg" alt="gnb_my">
                     </a>
                   </picture>
